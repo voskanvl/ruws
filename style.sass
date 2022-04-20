@@ -5,8 +5,16 @@
 @import "./main"
 @import "./catalog"
 @import "./_panel"
-@import "./_banner"
+@import "./banner/_banner"
 @import "./_brand"
+@import "./_head"
+@import "./_big-head"
+@import "./_big-button"
+@import "./_container"
+@import "./_main-head"
+@import "./_search"
+@import "./_geo"
+@import "./_menu"
 
 body
     font-family: Roboto, sans-serif
@@ -15,96 +23,3 @@ h2
     font-size: 25px
     font-weight: 400
     color: $color__black-super
-.container
-    max-width: $width__max
-    margin: 0 auto
-    padding: 0 1rem
-
-.main-head
-    margin-bottom: 1rem
-
-.head
-    display: grid
-    grid-template-columns: 1fr 1fr
-    &__left
-        display: flex
-    &__right
-        font-size: 14px
-        display: flex
-        justify-content: flex-end
-        column-gap: 3em
-        & > .head__item
-            list-style: none
-    &__item > a
-        color: $color__black
-        text-decoration: none
-
-.geo
-    display: flex
-    align-items: center
-    &__location
-        padding: 0 8px
-
-.big-head
-    display: grid
-    grid-template-columns: repeat(3, 1fr)
-    place-items: center
-    margin-bottom: 21px
-    &__left
-        display: flex
-        align-items: center
-    &__right
-        place-self: center end
-    &__title
-        padding-left: 32px
-        line-height: 25px
-    &__phone
-        font-size: 18px
-        font-weight: bold
-    &__call > a
-        color: $color__green
-        font-size: 16px
-        font-weight: lighter
-    &__logo
-        margin-left: -7px
-
-.search
-    display: flex
-    width: 100%
-    border-bottom: 1px solid $color__black-transparent
-    &__input
-        border: none
-        flex: 1 0
-menu
-    padding: 0
-.navbar
-    background: $color__black
-    color: $color__white
-    position: absolute
-    left: 0
-    right: 0
-    &__nav
-        display: flex
-        margin: 0 auto
-        max-width: $width__max
-    &__category
-        display: flex
-        flex-grow: 1
-        align-items: center
-        margin: 21px 35px
-    &__item
-        padding: 0 50px
-        & > a
-            color: inherit
-            text-decoration: inherit
-
-.big-button
-    background: $color__red
-    color: $color__white
-    display: flex
-    align-items: center
-    justify-content: space-between
-    width: $big-button__width
-    padding: 0 1rem
-    border: none
-    cursor: pointer
