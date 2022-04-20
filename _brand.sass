@@ -1,0 +1,24 @@
+@import "./_consts"
+
+.brands
+    display: flex
+    flex-wrap: wrap
+    width: 100%
+    gap: 48px
+.brand
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+    &__img
+        width: 175px
+        height: 141px
+        margin-bottom: 12px
+        border: 1px solid $color__grey
+        border-radius: 5px
+        display: grid
+        place-items: center
+    &__title
+        width: 175px
+        text-align: center
