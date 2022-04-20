@@ -1,0 +1,39 @@
+@import "./_consts"
+.product-card
+    padding: 20px 25px
+    &__label
+        width: 50%
+        padding: 8px 20px
+        border-radius: 5px 0 0 0
+        margin-bottom: 32px
+        &-active
+            background: $color__red
+            &::after
+                content: "В наличии"
+        &-passive
+            background: $color__gray1
+            &::after
+                content: "Закочился"
+    &__img
+        width: 184px
+        margin: 0 auto
+    &__price
+        font-size: 18px
+        margin-bottom: 6px
+        &::after
+            content: "\20BD"
+
+    &__body
+        font-size: 14px
+        margin-bottom: 32px
+    &__footer
+        display: flex
+    &__counter
+        background: $color__gray2
+        display: flex
+        color: $color__brown
+        font-size: 16px
+    &__basket
+
+    &::hover
+        box-shadow: $box-shadow
