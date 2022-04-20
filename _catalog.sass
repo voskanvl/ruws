@@ -1,11 +1,36 @@
 @import "./_consts"
 
 .catalog
+    padding: 1rem 0
     display: flex
-    flex-direction: row
+    flex-direction: column
+    margin: 0
+    margin-right: 15px
+    padding-inline-start: 0
+
     &__item
+        cursor: pointer
+        box-sizing: border-box
+        width: 100%
+        max-width: $width__catalog
+        list-style: none
         border-radius: 3px
         border: 1px solid #E5ECF3
         padding: 1rem
         display: flex
         justify-content: space-between
+        align-items: center
+        transition: background 0.2s ease
+
+        & > .expand-arrow__pic-close > svg, & > .expand-arrow__pic-open > svg
+            stroke: black
+        & > span:first-child
+            overflow: hidden
+            white-space: nowrap
+            text-overflow: ellipsis
+        &:hover
+            background: $color__red-opacity
+            border: 1px solid transparent
+
+    &__item:not(:last-child)
+        margin-bottom: 10px
