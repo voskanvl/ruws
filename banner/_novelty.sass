@@ -1,15 +1,19 @@
 .novelty
     grid-area: right
     overflow: hidden
+    &__carousel
+        margin: 0 auto
     &__images
         position: absolute
         z-index: 1
         bottom: 0
-    &__img
-        position: absolute
-        left: 37px
+        display: flex
         bottom: 88px
         z-index: 2
+    &__img
+        left: 0
+        right: 0
+        margin: 0 32px
     &__shadow
         width: 167px
         height: 13px
@@ -18,5 +22,21 @@
         border-radius: 50%
         filter: blur(4px)
         position: absolute
-        left: 58%
-        transform: translateX(-50%)
+        left: 10%
+    &__controls
+        display: flex
+        position: absolute
+        z-index: 2
+        bottom: 12px
+        left: 0
+        right: 0
+        justify-content: center
+    &__ellipse
+        width: 12px
+        height: 12px
+        border-radius: 50%
+        background: #ffffff6e
+        margin: 0 5px
+        cursor: pointer
+        &-active
+            background: #fff
