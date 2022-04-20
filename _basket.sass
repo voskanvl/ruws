@@ -1,0 +1,18 @@
+@import "./_consts"
+
+.basket
+    display: flex
+    column-gap: 14px
+    justify-content: center
+    align-items: center
+    margin-left: 70px
+    & > *
+
+    &__data
+        display: flex
+        flex-direction: column
+    &__summa
+        &::after
+            content: "\20BD"
+    &__volume
+        text-decoration: underline
