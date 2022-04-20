@@ -1,0 +1,13 @@
+@import "./_consts"
+.panel
+    background: $color__green
+    border-radius: 5px
+    &__title, &__price, &__label
+        font-size: 25px
+    &__price
+        &::after
+            content: "&#8381;"
+    &__body
+        color: #ACA6A6
+    &__label
+        text-transform: uppercase
