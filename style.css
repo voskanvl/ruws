@@ -131,6 +131,71 @@
   margin-bottom: 10px;
 }
 
+.panel {
+  background: #E5ECF3;
+  border-radius: 5px;
+  padding: 32px;
+}
+
+.panel__title, .panel__price, .panel__label {
+  font-size: 25px;
+}
+
+.panel__price::after {
+  content: "&#8381;";
+}
+
+.panel__body {
+  color: #ACA6A6;
+}
+
+.panel__label {
+  text-transform: uppercase;
+}
+
+.panel .discount {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: topleft;
+}
+
+.banner {
+  padding: 1rem 0;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "topleft topleft right" "bottomleft bottommiddle right";
+  -webkit-column-gap: 13px;
+          column-gap: 13px;
+  row-gap: 16px;
+}
+
+.discount {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: topleft;
+}
+
+.novelty {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 3;
+  grid-area: right;
+}
+
+.oil1 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: bottomleft;
+}
+
+.oil2 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: bottommiddle;
+}
+
 body {
   font-family: Roboto, sans-serif;
 }
