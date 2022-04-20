@@ -1,0 +1,51 @@
+$color__white: #ffffff
+$color__black: #2b292b
+$color__black-transparent: rgba(0,0,0,0.47)
+$color__green: #91babe
+$color__gray: #f4f4f5
+$color__red: #faac3d
+
+body
+    font-family: Roboto, sans-serif
+.container
+    max-width: 1320px
+    margin: 0 auto
+.head
+    display: grid
+    grid-template-columns: 1fr 1fr
+    &__left
+        display: flex
+    &__right
+        font-size: 14px
+        display: flex
+        justify-content: flex-end
+        column-gap: 3em
+        & > .head__item
+            list-style: none
+    &__item > a
+        color: $color__black
+        text-decoration: none
+
+.geo
+    display: flex
+    align-items: center
+    &__location
+        padding: 0 8px
+
+.big-head
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    place-items: center
+    &__left
+        display: flex
+        align-items: center
+    &__right
+        place-self: center end
+
+.search
+    display: flex
+    width: 100%
+    border-bottom: 1px solid $color__black-transparent
+    &__input
+        border: none
+        flex: 1 0
