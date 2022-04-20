@@ -1,20 +1,34 @@
 @import "./_consts"
 .panel
+    position: relative
     background: $color__grey
     border-radius: 5px
     padding: 32px
 
-    &__title, &__price, &__label
-        font-size: 25px
+    &__title
         margin-bottom: 25px
+        &-f25
+            font-size: 25px
+        &-f18
+            font-size: 18px
+        &-f20
+            font-size: 20px
     &__price
+        margin-bottom: 25px
+        &-f25
+            font-size: 25px
+        &-f20
+            font-size: 20px
         &::after
             content: "\20BD"
     &__body
         color: #ACA6A6
         margin-bottom: 75px
     &__label
+        margin-bottom: 25px
         text-transform: uppercase
+        font-size: 25px
+        letter-spacing: -1px
 
     & .mark
         box-sizing: border-box
