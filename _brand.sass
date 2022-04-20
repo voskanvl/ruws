@@ -10,6 +10,8 @@
     flex-direction: column
     justify-content: center
     align-items: center
+    cursor: pointer
+    text-decoration: none
 
     &__img
         width: 175px
@@ -19,6 +21,12 @@
         border-radius: 5px
         display: grid
         place-items: center
+        transition: box-shadow 0.4s ease
+        &:hover
+            box-shadow: 0 4px 4px #0004
     &__title
         width: 175px
         text-align: center
+        color: $color__black-super
+        font-size: 20px
+        text-decoration: inherit

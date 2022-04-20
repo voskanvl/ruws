@@ -213,6 +213,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .brand__img {
@@ -224,15 +226,33 @@
   display: -ms-grid;
   display: grid;
   place-items: center;
+  -webkit-transition: -webkit-box-shadow 0.4s ease;
+  transition: -webkit-box-shadow 0.4s ease;
+  transition: box-shadow 0.4s ease;
+  transition: box-shadow 0.4s ease, -webkit-box-shadow 0.4s ease;
+}
+
+.brand__img:hover {
+  -webkit-box-shadow: 0 4px 4px #0004;
+          box-shadow: 0 4px 4px #0004;
 }
 
 .brand__title {
   width: 175px;
   text-align: center;
+  color: #181614;
+  font-size: 20px;
+  text-decoration: inherit;
 }
 
 body {
   font-family: Roboto, sans-serif;
+}
+
+h2 {
+  font-size: 25px;
+  font-weight: 400;
+  color: #181614;
 }
 
 .container {
