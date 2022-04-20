@@ -139,18 +139,45 @@
 
 .panel__title, .panel__price, .panel__label {
   font-size: 25px;
+  margin-bottom: 25px;
 }
 
 .panel__price::after {
-  content: "&#8381;";
+  content: "\20BD";
 }
 
 .panel__body {
   color: #ACA6A6;
+  margin-bottom: 75px;
 }
 
 .panel__label {
   text-transform: uppercase;
+}
+
+.panel .mark {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: 41px;
+  font-size: 25px;
+  color: #fff;
+  background: #91babe;
+  width: 88px;
+  height: 49px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.panel .mark::after {
+  content: "%";
 }
 
 .banner {
@@ -168,6 +195,19 @@
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: topleft;
+  position: relative;
+}
+
+.discount__img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+}
+
+.discount__wrap {
+  width: 45%;
+  z-index: 1;
 }
 
 .novelty {

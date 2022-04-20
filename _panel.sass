@@ -6,10 +6,27 @@
 
     &__title, &__price, &__label
         font-size: 25px
+        margin-bottom: 25px
     &__price
         &::after
-            content: "&#8381;"
+            content: "\20BD"
     &__body
         color: #ACA6A6
+        margin-bottom: 75px
     &__label
         text-transform: uppercase
+
+    & .mark
+        box-sizing: border-box
+        margin-bottom: 41px
+        font-size: 25px
+        color: #fff
+        background: $color__green
+        width: 88px
+        height: 49px
+        border-radius: 5px
+        display: flex
+        justify-content: center
+        align-items: center
+        &::after
+            content: "%"
