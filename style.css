@@ -68,7 +68,7 @@
 }
 
 .main {
-  margin: 5rem auto 0;
+  margin: 5rem auto 100px;
   max-width: 1356px;
   display: -ms-grid;
   display: grid;
@@ -486,7 +486,7 @@
 }
 
 .main-head {
-  margin-bottom: 1rem;
+  margin: 1rem auto;
   max-width: 1356px;
 }
 
