@@ -931,7 +931,7 @@ menu {
 }
 
 .footer-footer {
-  padding: 60px 0 15px;
+  padding: 60px 0 85px;
 }
 
 .footer-footer__wrap {
@@ -1001,6 +1001,12 @@ h2 {
 }
 
 .developer {
-  margin-top: 99px;
+  border-top: 1px solid #fff7;
+}
+
+.developer__wrap {
   opacity: 49%;
+  margin: 0 auto;
+  padding: 14px 0;
+  max-width: 1356px;
 }
