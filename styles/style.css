@@ -801,6 +801,12 @@ menu {
           align-items: center;
 }
 
+.news-carousel__controlsleft, .news-carousel__controlsright {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
 .news-carousel__controlsleft {
   padding: 0 45px 0 16px;
 }
@@ -817,6 +823,10 @@ menu {
 
 .news-carousel__cardsgroup > .news-card:not(:last-child) {
   margin-right: 27px;
+}
+
+.news {
+  margin-bottom: 200px;
 }
 
 .news__wrap {
