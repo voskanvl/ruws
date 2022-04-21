@@ -2,11 +2,14 @@
 .about
     &__wrap
         max-width: $width__max
-        margin: 100px auto
+        margin: 100px auto 100px 28vw
         position: relative
     &__img
         position: absolute
         top: 0
         right: 0
+        z-index: -1
+        & > img
+            opacity: 0.5
     &__body
         width: 50%
