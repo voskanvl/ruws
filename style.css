@@ -68,7 +68,8 @@
 }
 
 .main {
-  margin-top: 5rem;
+  margin: 5rem auto 0;
+  max-width: 1356px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 252px auto;
@@ -480,13 +481,13 @@
 }
 
 .container {
-  max-width: 1356px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
 .main-head {
   margin-bottom: 1rem;
+  max-width: 1356px;
 }
 
 .search {
@@ -709,15 +710,33 @@ menu {
 }
 
 .top {
-  position: absolute;
   left: 0;
   right: 0;
   background: #f4f4f5;
   padding: 48px 0;
+  margin: 0 -1rem;
+}
+
+.about__wrap {
+  max-width: 1356px;
+  margin: 100px auto;
+  position: relative;
+}
+
+.about__img {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.about__body {
+  width: 50%;
 }
 
 body {
   font-family: Roboto, sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
 h2 {
