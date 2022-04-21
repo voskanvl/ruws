@@ -1,11 +1,25 @@
-@import "./_consts"
+@import "./_counter"
+@import "../_consts"
+
 .product-card
+    position: relative
+    max-width: 251px
     padding: 20px 25px
+    background: #fff
+    border: $color__grey
+    border-radius: 5px
+    transition: box-shadow 0.4s ease
+    &:hover
+        box-shadow: $box-shadow
     &__label
-        width: 50%
+        position: absolute
+        top: 0
+        left: 0
+        right: 50%
         padding: 8px 20px
         border-radius: 5px 0 0 0
-        margin-bottom: 32px
+        text-align: center
+        color: #fff
         &-active
             background: $color__red
             &::after
@@ -16,7 +30,7 @@
                 content: "Закочился"
     &__img
         width: 184px
-        margin: 0 auto
+        margin: 68px auto 15px
     &__price
         font-size: 18px
         margin-bottom: 6px
@@ -28,12 +42,10 @@
         margin-bottom: 32px
     &__footer
         display: flex
+        justify-content: space-between
     &__counter
-        background: $color__gray2
-        display: flex
-        color: $color__brown
-        font-size: 16px
+
     &__basket
 
-    &::hover
-        box-shadow: $box-shadow
+    &:not(:last-child)
+        margin-right: 21px
