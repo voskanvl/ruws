@@ -1,0 +1,13 @@
+@import "../_consts"
+.news-carousel
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    &__controlsleft
+        padding: 0 45px 0 16px
+    &__controlsright,
+        padding: 0 16px 0 45px
+    &__cardsgroup
+        display: flex
+        & > .news-card:not(:last-child)
+            margin-right: 27px
