@@ -1001,7 +1001,7 @@ h2 {
 }
 
 .developer {
-  border-top: 1px solid #fff7;
+  border-top: 1px solid rgba(255, 255, 255, 0.38);
 }
 
 .developer__wrap {
