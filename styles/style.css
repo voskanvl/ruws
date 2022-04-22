@@ -829,6 +829,11 @@ menu {
   border: 1px solid #E5ECF3;
   overflow: hidden;
   font-size: 14px;
+  display: inline-block;
+}
+
+.news-card:not(:last-child) {
+  margin-right: 27px;
 }
 
 .news-card__img {
@@ -892,14 +897,9 @@ menu {
 }
 
 .news-carousel__cardsgroup {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  gap: 27px;
-  overflow: hidden;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 0.5rem 0;
 }
 
 .news {
