@@ -12,3 +12,27 @@
         place-items: center
     .big-head
         grid-template-areas: "leftEl leftEl leftEl" "searchEl searchEl rightEl"
+        margin-bottom: 0.5rem
+        &__logo
+            position: absolute
+            top: 0
+            left: 0
+            margin: 0.5rem
+            opacity: 0.5
+            z-index: -1
+    .banner
+        grid-template-areas: "topleft" "topleft" "bottomleft" "bottommiddle" "right" "right"
+        grid-template-columns: 1fr
+        grid-auto-flow: 1fr
+    .main
+        margin-top: 3rem
+    .top-carousel
+        left: unset
+        width: unset
+        padding: 0 1rem
+    .news__wrap
+        margin-left: unset
+    .footer-footer__wrap
+        flex-direction: column
+    .brands
+        gap: 10px
