@@ -1,17 +1,21 @@
 @import "../_consts"
 .news-carousel
     display: flex
-    justify-content: flex-start
+    justify-content: space-between
     align-items: center
     &__controlsleft, &__controlsright
         border: none
         background: none
         cursor: pointer
+        flex: 0 0
     &__controlsleft
         padding: 0 45px 0 16px
     &__controlsright
         padding: 0 16px 0 45px
     &__cardsgroup
         display: flex
-        & > .news-card:not(:last-child)
-            margin-right: 27px
+        justify-content: flex-start
+        gap: 27px
+        overflow: hidden
+        // & > .news-card:not(:last-child)
+        //     margin-right: 27px
