@@ -1,18 +1,17 @@
+@import "../_consts"
 .novelty
     grid-area: right
     overflow: hidden
+    background: $color__grey url("/assets/back.svg") no-repeat
+    background-position: bottom
     &__carousel
         margin: 0 auto
     &__images
         position: absolute
-        z-index: 1
-        bottom: 0
         display: flex
         bottom: 88px
         z-index: 2
     &__img
-        left: 0
-        right: 0
         margin: 0 32px
     &__shadow
         width: 167px
