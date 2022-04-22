@@ -1,8 +1,14 @@
-
+@import "../_consts"
 @import "./_product-card"
 .top-carousel
-    margin-left: 28vw
+    // margin-left: 28vw
     display: flex
+    justify-content: flex-end
+    width: $width__main
+    position: relative
+    left: 252px
+    &__blank
+        flex: 0 0 252px
     &__leftside
         display: flex
         flex-direction: column
