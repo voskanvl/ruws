@@ -912,6 +912,15 @@ menu {
   margin: 0 auto;
 }
 
+.footer-header__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
 .footer-header__text {
   width: 33%;
 }
