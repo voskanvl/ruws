@@ -1,14 +1,19 @@
 @import "./_consts"
 .big-head
     display: grid
-    grid-template-columns: repeat(3, 1fr)
+    grid-template-areas: "leftEl searchEl rightEl"
+    grid-template-columns: 1fr 1fr 1fr
     place-items: center
     margin-bottom: 21px
     &__left
         display: flex
         align-items: center
+        grid-area: leftEl
     &__right
         place-self: center end
+        grid-area: rightEl
+    &__search
+        grid-area: searchEl
     &__title
         padding-left: 32px
         line-height: 25px
