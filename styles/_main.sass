@@ -1,6 +1,8 @@
 @import "./_consts"
+@import "./_general"
 .main
     margin: 5rem auto 100px
     max-width: $width__max
     display: grid
+    grid-template-areas: "catalog general" "catalog brands"
     grid-template-columns: $width__catalog auto
