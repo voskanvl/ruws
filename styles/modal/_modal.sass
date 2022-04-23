@@ -3,6 +3,7 @@
     z-index: 10
     inset: 0
     background: #000b
+    display: none
     &__body
         position: absolute
         top: 50%
@@ -17,6 +18,10 @@
             & > *
                 font-size: 30px
     &__close
+        z-index: 11
+        background: none
+        border: none
+        cursor: pointer
         box-sizing: content-box
         width: 32px
         padding: 1rem
