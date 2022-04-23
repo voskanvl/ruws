@@ -1,4 +1,5 @@
 const bigButton = document.querySelector(".big-button");
+const bigButtonPic = document.querySelector(".big-button__pic");
 const catalog = document.querySelector(".catalog");
 const mainElement = document.querySelector("article.main");
 
@@ -8,10 +9,12 @@ bigButton.addEventListener("click", () => {
         mainElement.style.gridTemplateColumns = "1fr";
         mainElement.style.gridTemplateAreas = '"general" "brands"';
         catalog.style.display = "none";
+        bigButtonPic.style.transform = "rotate(0deg)";
     } else {
         catalog.style.display = "";
         mainElement.style.gridTemplateColumns = "";
         mainElement.style.gridTemplateAreas = "";
+        bigButtonPic.style.transform = "rotate(90deg)";
     }
 });
 //--- MODAL ---
