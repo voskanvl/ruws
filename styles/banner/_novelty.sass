@@ -4,29 +4,42 @@
     overflow: hidden
     background: $color__grey url("/assets/back.svg") no-repeat
     background-position: bottom
+    background-size: contain
+    &__back
+        display: none
+        position: absolute
+        bottom: 0
+        right: 0
+        z-index: 0
+        opacity: 0.5
     &__carousel
         margin: 0 auto
         display: flex
         justify-content: center
         align-items: center
     &__images
-        position: absolute
-        display: flex
-        bottom: 88px
-        z-index: 2
-        width: 274px
-        overflow: hidden
+        // position: absolute
+        // display: flex
+        // bottom: 88px
+        // z-index: 2
+        // width: 274px
+        // overflow: hidden
+        white-space: nowrap
     &__img
-        margin: 0 32px
+        display: inline-block
+        width: 100%
+        & > img
+            width: 50%
+            transform: translateX(50%)
     &__shadow
-        width: 167px
+        width: 40%
         height: 13px
         z-index: 1
         background: #0004
         border-radius: 50%
         filter: blur(4px)
-        position: absolute
-        left: 10%
+        // position: absolute
+        margin: 2px auto
     &__controls
         display: flex
         position: absolute
