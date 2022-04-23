@@ -560,6 +560,16 @@
   cursor: pointer;
 }
 
+.big-button__pic {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transition: -webkit-transform 0.4s ease;
+  transition: -webkit-transform 0.4s ease;
+  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, -webkit-transform 0.4s ease;
+  will-change: transform;
+}
+
 .container {
   margin: 0 auto;
   padding: 0 1rem;
@@ -648,7 +658,6 @@ menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -1220,6 +1229,7 @@ menu {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
+    width: 100%;
   }
   .burger {
     display: -webkit-box;
