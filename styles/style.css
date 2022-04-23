@@ -455,6 +455,15 @@
   color: #ffffff;
 }
 
+.burger {
+  display: none;
+  margin: 0;
+  padding: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .burger__pic {
   background: none;
   border: none;
@@ -633,6 +642,16 @@ menu {
 .navbar__item > a {
   color: inherit;
   text-decoration: inherit;
+}
+
+.navbar__rightside {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .counter {
@@ -889,10 +908,12 @@ menu {
 
 .news-card__title {
   font-size: 20px;
+  white-space: normal;
 }
 
 .news-card__text {
   margin-bottom: 40px;
+  white-space: normal;
 }
 
 .news-card__referense {
@@ -1102,8 +1123,8 @@ menu {
   .about__img > img {
     opacity: 0.25;
   }
-  .basket__data {
-    display: none;
+  .basket {
+    margin-left: 1rem;
   }
   .navbar__category {
     margin: 0;
@@ -1172,6 +1193,82 @@ menu {
   .discount__img {
     -webkit-transform: scale(0.8) translate(12%, -12%);
             transform: scale(0.8) translate(12%, -12%);
+  }
+  .basket__data {
+    display: none;
+  }
+  .lk__title {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 588px) {
+  .navbar__category {
+    display: none;
+  }
+  .navbar__rightside {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .burger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .news {
+    margin-bottom: 5rem;
+  }
+  .news-card {
+    max-width: 150px;
+  }
+  .news-card:not(:last-child) {
+    margin-right: 1rem;
+  }
+  .news-card__body {
+    padding: 0.5rem;
+  }
+  .news-card__img {
+    padding: 1rem;
+  }
+  .news-card__text {
+    margin-bottom: 1rem;
+    white-space: normal;
+  }
+  .news-card__title {
+    padding-top: 1rem;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+  }
+  .news-carousel__controlsleft, .news-carousel__controlsright {
+    padding: 0.5rem;
+  }
+  .top-carousel__leftside {
+    margin-right: 0;
+  }
+  .top-carousel__title {
+    font-size: 18px;
+  }
+  .main-menu {
+    -webkit-column-gap: 1rem;
+            column-gap: 1rem;
+  }
+  .main-menu__item {
+    font-size: 14px;
+  }
+  .basket {
+    margin-left: 1rem;
+  }
+  .basket__data {
+    display: none;
+  }
+  .lk__title {
+    display: none;
+  }
+  .main {
+    -ms-grid-columns: 160px auto;
+        grid-template-columns: 160px auto;
   }
 }
 
