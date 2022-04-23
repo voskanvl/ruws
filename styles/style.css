@@ -1141,6 +1141,10 @@ menu {
         grid-template-areas: "leftEl leftEl leftEl" "searchEl searchEl rightEl";
     margin-bottom: 0.5rem;
   }
+  .big-head__title {
+    padding-left: 0;
+    text-align: center;
+  }
   .big-head__logo {
     position: absolute;
     top: 0;
@@ -1187,6 +1191,9 @@ menu {
   .discount__img {
     right: 0;
   }
+  .main-menu {
+    padding-left: 1rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -1199,6 +1206,9 @@ menu {
   }
   .lk__title {
     display: none;
+  }
+  .brands__wrap {
+    gap: 1rem;
   }
 }
 
@@ -1269,6 +1279,11 @@ menu {
   .main {
     -ms-grid-columns: 160px auto;
         grid-template-columns: 160px auto;
+  }
+  .big-head {
+        grid-template-areas: "leftEl rightEl" "searchEl searchEl";
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
   }
 }
 
