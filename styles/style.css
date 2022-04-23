@@ -153,6 +153,7 @@
 
 .panel__title {
   margin-bottom: 25px;
+  mix-blend-mode: darken;
 }
 
 .panel__title-f25 {
@@ -186,7 +187,7 @@
 .panel__body {
   color: #ACA6A6;
   margin-bottom: 75px;
-  mix-blend-mode: darken;
+  mix-blend-mode: multiply;
 }
 
 .panel__label {
@@ -1294,6 +1295,56 @@ menu {
         grid-template-areas: "leftEl rightEl" "searchEl searchEl";
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
+  }
+  .oil1__img {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .panel {
+    padding: 1rem;
+  }
+  .panel__title {
+    font-size: 16px;
+  }
+  .panel__body {
+    font-size: 14px;
+  }
+  .panel__price-f25 {
+    font-size: 16px;
+  }
+  .panel__price {
+    margin-bottom: 0;
+  }
+  .discount__img {
+    -webkit-transform: scale(0.4) translate(71%, -57%);
+            transform: scale(0.4) translate(71%, -57%);
+  }
+  .oil1__img {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+  .catalog__item {
+    padding: 2px;
+  }
+  .catalog__item:not(:last-child) {
+    margin-bottom: 2px;
+  }
+  .mark {
+    width: 44px;
+    height: 25px;
+  }
+  .about__wrap {
+    margin: 40px auto 40px 0;
+  }
+  .about__body > p {
+    font-size: 14px;
+  }
+  .about__img {
+    -webkit-transform: translateX(20%);
+            transform: translateX(20%);
   }
 }
 
