@@ -455,6 +455,10 @@
   color: #ffffff;
 }
 
+.burger__pic > svg {
+  fill: #fff;
+}
+
 .head {
   display: -ms-grid;
   display: grid;
@@ -1163,6 +1167,40 @@ menu {
     -webkit-transform: scale(0.8) translate(12%, -12%);
             transform: scale(0.8) translate(12%, -12%);
   }
+}
+
+.modal {
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  background: #000b;
+}
+
+.modal__body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 100%;
+}
+
+.modal__body > * {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.modal__body > * > * {
+  font-size: 30px;
 }
 
 *, *::before, *::after {
