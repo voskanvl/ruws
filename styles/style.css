@@ -220,7 +220,7 @@
 .discount__img {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 74px;
   z-index: 0;
 }
 
@@ -237,6 +237,16 @@
   overflow: hidden;
   background: #E5ECF3 url("/assets/back.svg") no-repeat;
   background-position: bottom;
+  background-size: contain;
+}
+
+.novelty__back {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  opacity: 0.5;
 }
 
 .novelty__carousel {
@@ -253,30 +263,29 @@
 }
 
 .novelty__images {
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  bottom: 88px;
-  z-index: 2;
-  width: 274px;
-  overflow: hidden;
+  white-space: nowrap;
 }
 
 .novelty__img {
-  margin: 0 32px;
+  display: inline-block;
+  width: 100%;
+}
+
+.novelty__img > img {
+  width: 50%;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
 }
 
 .novelty__shadow {
-  width: 167px;
+  width: 40%;
   height: 13px;
   z-index: 1;
   background: #0004;
   border-radius: 50%;
   -webkit-filter: blur(4px);
           filter: blur(4px);
-  position: absolute;
-  left: 10%;
+  margin: 2px auto;
 }
 
 .novelty__controls {
@@ -1128,6 +1137,16 @@ menu {
   }
   .novelty {
     background-position: right bottom 165%;
+  }
+  .discount__img {
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .discount__img {
+    -webkit-transform: scale(0.8) translate(12%, -12%);
+            transform: scale(0.8) translate(12%, -12%);
   }
 }
 
