@@ -175,6 +175,7 @@
 .panel__body {
   color: #ACA6A6;
   margin-bottom: 75px;
+  mix-blend-mode: darken;
 }
 
 .panel__label {
@@ -235,18 +236,13 @@
   -ms-grid-column: 3;
   grid-area: right;
   overflow: hidden;
-  background: #E5ECF3 url("/assets/back.svg") no-repeat;
-  background-position: bottom;
-  background-size: contain;
 }
 
 .novelty__back {
-  display: none;
   position: absolute;
   bottom: 0;
   right: 0;
   z-index: 0;
-  opacity: 0.5;
 }
 
 .novelty__carousel {
