@@ -745,7 +745,8 @@ menu {
           justify-content: flex-end;
   width: 1067px;
   position: relative;
-  left: 252px;
+  left: 116px;
+  margin: 0 auto;
 }
 
 .top-carousel__blank {
