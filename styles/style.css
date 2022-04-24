@@ -198,6 +198,7 @@
 
 .panel__price::after {
   content: "\20BD";
+  font-family: Roboto, sans-serif;
 }
 
 .panel__body {
@@ -236,6 +237,12 @@
 
 .panel .mark::after {
   content: "%";
+  font-family: Roboto, sans-serif;
+  mix-blend-mode: hard-light;
+}
+
+.panel .mark > span {
+  mix-blend-mode: hard-light;
 }
 
 .discount {
@@ -1328,9 +1335,24 @@ menu {
   .catalog__itembody:not(:last-child) {
     margin-bottom: 2px;
   }
+  .footer-header__wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .footer-header__text {
+    text-align: center;
+    width: 100%;
+    padding-bottom: 2rem;
+  }
 }
 
 @media screen and (max-width: 425px) {
+  .big-head__title {
+    font-size: 12px;
+    font-weight: 600;
+  }
   .panel {
     padding: 1rem;
   }
@@ -1355,6 +1377,7 @@ menu {
   .discount__img {
     -webkit-transform: scale(0.4) translate(71%, -57%);
             transform: scale(0.4) translate(71%, -57%);
+    top: -1rem;
   }
   .oil1__img {
     -webkit-transform: scale(0.7);
@@ -1409,6 +1432,7 @@ menu {
   }
   .big-head__title {
     font-size: 12px;
+    font-weight: 600;
     margin-bottom: 0;
   }
   .big-head__phone {
@@ -1442,6 +1466,9 @@ menu {
   .about__body > p {
     font-size: 12px;
     padding: 0 1rem;
+  }
+  .oil1__img {
+    right: 0;
   }
 }
 
