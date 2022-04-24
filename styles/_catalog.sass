@@ -9,11 +9,13 @@
     padding-inline-start: 0
     grid-area: catalog
     &__item
+        list-style: none
+
+    &__itembody
         cursor: pointer
         box-sizing: border-box
         width: 100%
         max-width: $width__catalog
-        list-style: none
         border-radius: 3px
         border: 1px solid #E5ECF3
         padding: 1rem
@@ -34,3 +36,10 @@
 
     &__item:not(:last-child)
         margin-bottom: 10px
+    &__item.sub-menu__container
+        flex-direction: column
+
+    &__item .sub-menu__content
+        display: none
+        margin: 10px 0 0px
+        padding-left: 0
