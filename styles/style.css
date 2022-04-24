@@ -1125,7 +1125,7 @@ menu {
 .developer__wrap {
   opacity: 49%;
   margin: 0 auto;
-  padding: 14px 1rem;
+  padding: 14px 1rem 30px;
   max-width: 1356px;
 }
 
@@ -1300,6 +1300,16 @@ menu {
     -webkit-transform: scale(0.7);
             transform: scale(0.7);
   }
+  .catalog__item {
+    padding: 2px;
+    padding-left: 0.5rem;
+  }
+  .catalog__item > span:first-child {
+    font-size: 13px;
+  }
+  .catalog__item:not(:last-child) {
+    margin-bottom: 2px;
+  }
 }
 
 @media screen and (max-width: 425px) {
@@ -1326,12 +1336,6 @@ menu {
     -webkit-transform: scale(0.7);
             transform: scale(0.7);
   }
-  .catalog__item {
-    padding: 2px;
-  }
-  .catalog__item:not(:last-child) {
-    margin-bottom: 2px;
-  }
   .mark {
     width: 44px;
     height: 25px;
@@ -1345,6 +1349,33 @@ menu {
   .about__img {
     -webkit-transform: translateX(20%);
             transform: translateX(20%);
+  }
+  .footer-header__text {
+    font-size: 14px;
+  }
+  .footer-header__input {
+    width: 50%;
+  }
+  .brand__img {
+    width: 100px;
+    height: 90px;
+    margin: 5px;
+  }
+  .brand__img > img {
+    width: 80%;
+  }
+  .brand__title {
+    font-size: 14px;
+    width: unset;
+  }
+  .brands {
+    margin: 0 -1rem;
+  }
+  .brands__wrap {
+    gap: 2px;
+  }
+  .brands > h2 {
+    text-align: center;
   }
 }
 
