@@ -1439,9 +1439,8 @@ menu {
     text-align: center;
   }
   .main {
-        grid-template-areas: "general" "brands";
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    -ms-grid-columns: 0 auto;
+        grid-template-columns: 0 auto;
   }
   .catalog {
     padding: 1rem;

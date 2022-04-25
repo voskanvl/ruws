@@ -5,7 +5,7 @@ const mainElement = document.querySelector("article.main");
 
 const STEP = 4;
 const MAX = 252;
-
+// --- hide catalog ---
 const gridLeftHide = (cb) => {
   const gtc = getComputedStyle(mainElement).gridTemplateColumns;
 
@@ -21,7 +21,7 @@ const gridLeftHide = (cb) => {
     gtcValue -= STEP;
   }, 0);
 };
-
+// --- show catalog ---
 const gridLeftShow = (cb) => {
   let gtcValue = 0;
 
@@ -34,18 +34,25 @@ const gridLeftShow = (cb) => {
     gtcValue += STEP;
   }, 0);
 };
-
+//---
 bigButton.addEventListener("click", () => {
   const opacity = getComputedStyle(catalog).opacity;
+  const match = matchMedia("(max-width: 425px)").matches;
+  // we don't open/close catlog on resolution under 425px ---
+  console.log(
+    "🚀 ~ file: main.js ~ line 41 ~ bigButton.addEventListener ~ match",
+    match
+  );
   if (opacity != 0) {
     catalog.style.opacity = "0";
-    gridLeftHide(() => {
-      setTimeout(() => {}, 0);
-    });
+    if (!match) gridLeftHide(() => {
+        setTimeout(() => {}, 0);
+      });
   } else {
-    gridLeftShow(() => {
-      catalog.style.opacity = "1";
-    });
+    if (!match) gridLeftShow(() => {
+        catalog.style.opacity = "1";
+      });
+    catalog.style.opacity = "1";
   }
 });
 //--- MODAL ---
