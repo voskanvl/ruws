@@ -45,11 +45,13 @@ bigButton.addEventListener("click", () => {
   );
   if (opacity != 0) {
     catalog.style.opacity = "0";
-    if (!match) gridLeftHide(() => {
+    if (!match)
+      gridLeftHide(() => {
         setTimeout(() => {}, 0);
       });
   } else {
-    if (!match) gridLeftShow(() => {
+    if (!match)
+      gridLeftShow(() => {
         catalog.style.opacity = "1";
       });
     catalog.style.opacity = "1";
@@ -84,4 +86,39 @@ catalog.addEventListener("click", ({ target }) => {
       submenuContent.style.display = "block";
     }
   }
+});
+
+//--- TOP-PRODUCTS CONTROLS ---
+const productCards = document.querySelectorAll(".product-card");
+const currentProductCardId = {
+  value: 0,
+  add() {
+    if (this.value >= productCards.length - 1) return;
+    this.value++;
+  },
+
+  minus() {
+    if (this.value === 0) return;
+    this.value--;
+  },
+};
+const right = document.querySelector(".top-controls__right");
+const left = document.querySelector(".top-controls__left");
+const group = document.querySelector(".top-carousel__cardsgroup");
+
+const moveToNextCard = () => {
+  // productCards[currentProductCardId].scrollIntoView({behavior:"smooth", inline:"center"});
+  //TODO: Не работает в Chrome! ?
+  const widthCard = getComputedStyle(productCards[0]).width;
+  const nextPosition = (parseInt(widthCard) / 2) * currentProductCardId.value;
+  group.scrollTo({ left: nextPosition, top: 0, behavior: "smooth" });
+};
+
+right.addEventListener("click", () => {
+  currentProductCardId.add();
+  moveToNextCard();
+});
+left.addEventListener("click", () => {
+  currentProductCardId.minus();
+  moveToNextCard();
 });
