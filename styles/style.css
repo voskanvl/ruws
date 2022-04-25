@@ -1226,6 +1226,9 @@ menu {
   .discount__img {
     right: 0;
   }
+  .discount__wrap {
+    width: 100%;
+  }
   .main-menu {
     padding-left: 1rem;
   }
@@ -1299,6 +1302,8 @@ menu {
   .main-menu {
     -webkit-column-gap: 1rem;
             column-gap: 1rem;
+    width: 100%;
+    margin: 0 auto;
   }
   .main-menu__item {
     font-size: 14px;
@@ -1428,7 +1433,7 @@ menu {
 
 @media screen and (max-width: 320px) {
   .container {
-    padding: 0 4px;
+    padding: 0 1rem;
   }
   .big-head__title {
     font-size: 12px;
@@ -1469,6 +1474,9 @@ menu {
   }
   .oil1__img {
     right: 0;
+  }
+  .panel__body {
+    margin-bottom: 1rem;
   }
 }
 
@@ -1544,3 +1552,4 @@ h2 {
   font-weight: 400;
   color: #181614;
 }
+/*# sourceMappingURL=style.css.map */
