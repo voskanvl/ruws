@@ -6,12 +6,16 @@ const mainElement = document.querySelector('article.main');
 bigButton.addEventListener('click', () => {
     const display = getComputedStyle(catalog).display;
     if (display !== 'none') {
-        mainElement.style.gridTemplateColumns = '1fr';
-        mainElement.style.gridTemplateAreas = '"general" "brands"';
-        catalog.style.display = 'none';
-        bigButtonPic.style.transform = 'rotate(0deg)';
+        catalog.style.opacity = '0'
+        setTimeout(() => {
+            mainElement.style.gridTemplateColumns = '1fr';
+            mainElement.style.gridTemplateAreas = '"general" "brands"';
+            catalog.style.display = 'none';
+            bigButtonPic.style.transform = 'rotate(0deg)';
+        }, 800)
     } else {
-        catalog.style.display = '';
+        catalog.style.display = 'flex';
+        setTimeout(() => { catalog.style.opacity = '1' }, 0)
         mainElement.style.gridTemplateColumns = '';
         mainElement.style.gridTemplateAreas = '';
         bigButtonPic.style.transform = 'rotate(90deg)';
