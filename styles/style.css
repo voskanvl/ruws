@@ -1609,4 +1609,8 @@ h2 {
   font-weight: 400;
   color: #181614;
 }
-/*# sourceMappingURL=style.css.map */
+
+button[disable="true"] {
+  opacity: 0.2;
+  pointer-events: none;
+}
