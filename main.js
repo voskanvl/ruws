@@ -146,3 +146,6 @@ bigButton.addEventListener("click", () => {
         catalog.style.opacity = "1";
     }
 });
+
+//--- возвращение noveltySlider в исхлдное состояник при изменении рарешения
+window.addEventListener("resize", noveltySlider.moveToCard);

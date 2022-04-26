@@ -10,6 +10,7 @@ class SliderRandomAccess {
     constructor(els, viewport, controls) {
         this.els = [...els];
         this.controls = [...controls];
+        this.moveToCard = this.moveToCard.bind(this);
         if (this.els.length !== this.controls.length)
             throw Error(
                 "Количесво элементов управления должно соответствовать количеству элементов перемещения ",
