@@ -39,10 +39,10 @@ bigButton.addEventListener("click", () => {
     const opacity = getComputedStyle(catalog).opacity;
     const match = matchMedia("(max-width: 425px)").matches;
     // we don't open/close catlog on resolution under 425px ---
-    console.log(
-        "🚀 ~ file: main.js ~ line 41 ~ bigButton.addEventListener ~ match",
-        match,
-    );
+    // console.log(
+    // "🚀 ~ file: main.js ~ line 41 ~ bigButton.addEventListener ~ match",
+    // match,
+    // );
     if (opacity != 0) {
         catalog.style.opacity = "0";
         if (!match)
@@ -63,7 +63,7 @@ const modal = document.querySelector(".modal");
 const close = document.querySelector(".modal__close");
 burgerButton.addEventListener("click", () => {
     const isOpen = getComputedStyle(modal).display;
-    console.log("🚀 ~ isOpen", isOpen, modal);
+    // console.log("🚀 ~ isOpen", isOpen, modal);
     if (isOpen === "none") {
         modal.style.display = "block";
         document.body.style.overflow = "hidden";
@@ -77,7 +77,7 @@ close.addEventListener("click", () => {
 catalog.addEventListener("click", ({ target }) => {
     const submenuContainer = target.closest(".sub-menu__container");
     const submenuContent = submenuContainer.querySelector(".sub-menu__content");
-    console.log("🚀 ~ submenu", submenuContainer, submenuContent);
+    // console.log("🚀 ~ submenu", submenuContainer, submenuContent);
     if (submenuContainer && submenuContent) {
         const isOpen = getComputedStyle(submenuContent).display;
         if (isOpen !== "none") {
@@ -88,53 +88,46 @@ catalog.addEventListener("click", ({ target }) => {
     }
 });
 
-//--- TOP-PRODUCTS CONTROLS ---
+//--- TOP-PRODUCTS SLIDER ---
 const productCards = document.querySelectorAll(".product-card");
-// const currentProductCardId = {
-//     value: 0,
-//     add() {
-//         if (this.value >= productCards.length - 1) return;
-//         this.value++;
-//     },
-
-//     minus() {
-//         if (this.value === 0) return;
-//         this.value--;
-//     },
-// };
-const right = document.querySelector(".top-controls__right");
-const left = document.querySelector(".top-controls__left");
-const wrap = document.querySelector(".top-carousel__wrap");
+const rightTop = document.querySelector(".top-controls__right");
+const leftTop = document.querySelector(".top-controls__left");
+const wrapTop = document.querySelector(".top-carousel__wrap");
 
 // const moveToNextCard = (el) => {
 //     // productCards[currentProductCardId].scrollIntoView({behavior:"smooth", inline:"center"});
 //     //TODO: Не работает в Chrome! ?
 //     const gotStyle = getComputedStyle(el);
-const slider = new Slider(productCards, wrap);
-wrap.addEventListener("over", () => right.setAttribute("disable", true));
-wrap.addEventListener("under", () => left.setAttribute("disable", true));
-right.addEventListener("click", () => {
-    slider.inc();
-    right.setAttribute("disable", slider.max);
-    left.setAttribute("disable", slider.min);
+const sliderTop = new Slider(productCards, wrapTop);
+wrapTop.addEventListener("over", () => rightNews.setAttribute("disable", true));
+wrapTop.addEventListener("under", () => leftTop.setAttribute("disable", true));
+rightTop.addEventListener("click", () => {
+    sliderTop.inc();
+    rightTop.setAttribute("disable", sliderTop.max);
+    leftTop.setAttribute("disable", sliderTop.min);
 });
-left.addEventListener("click", () => {
-    slider.dec();
-    right.setAttribute("disable", slider.max);
-    left.setAttribute("disable", slider.min);
+leftTop.addEventListener("click", () => {
+    sliderTop.dec();
+    rightTop.setAttribute("disable", sliderTop.max);
+    leftTop.setAttribute("disable", sliderTop.min);
 });
 
-//--- flickity
+//--- NEWS ---
+const newsCards = document.querySelectorAll(".news-card");
+const wrapNews = document.querySelector(".news-carousel__wrap");
+console.log(wrapNews);
+const rightNews = document.querySelector(".news-carousel__controlsright");
+const leftNews = document.querySelector(".news-carousel__controlsleft");
+const sliderNews = new Slider(newsCards, wrapNews);
+rightNews.addEventListener("click", () => {
+    sliderNews.inc();
+    rightNews.setAttribute("disable", sliderNews.max);
+    leftNews.setAttribute("disable", sliderNews.min);
+});
+leftNews.addEventListener("click", () => {
+    sliderNews.dec();
+    rightNews.setAttribute("disable", sliderNews.max);
+    leftNews.setAttribute("disable", sliderNews.min);
+});
 
-// let elem = document.querySelector(".main-carousel");
-// let flkty = new Flickity(elem, {
-//     // options
-//     cellAlign: "left",
-//     contain: true,
-// });
-
-// element argument can be a selector string
-//   for an individual element
-// let flkty = new Flickity( '.main-carousel', {
-//   // options
-// });
+//--- NOVELTY ---

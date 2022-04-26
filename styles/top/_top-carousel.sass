@@ -28,3 +28,12 @@
         scroll-snap-type: x mandatory
         & > .product-card
             scroll-snap-align: center
+        &::-webkit-scrollbar
+            display: none
+        &::-moz-scrollbar
+            width: 0px
+            height: 0px
+
+    &__wrap
+        display: flex
+        transition: 0.4s ease

@@ -735,10 +735,10 @@ menu {
   background: #fff;
   border: #E5ECF3;
   border-radius: 5px;
-  -webkit-transition: -webkit-box-shadow 0.4s ease;
-  transition: -webkit-box-shadow 0.4s ease;
-  transition: box-shadow 0.4s ease;
-  transition: box-shadow 0.4s ease, -webkit-box-shadow 0.4s ease;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 .product-card:hover {
@@ -755,6 +755,7 @@ menu {
   border-radius: 5px 0 0 0;
   text-align: center;
   color: #fff;
+  font-size: 14px;
 }
 
 .product-card__label-active {
@@ -855,6 +856,23 @@ menu {
 
 .top-carousel__cardsgroup > .product-card {
   scroll-snap-align: center;
+}
+
+.top-carousel__cardsgroup::-webkit-scrollbar {
+  display: none;
+}
+
+.top-carousel__cardsgroup::-moz-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.top-carousel__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
 }
 
 .top-controls {
@@ -1002,6 +1020,20 @@ menu {
 
 .news-carousel__cardsgroup {
   overflow: auto;
+}
+
+.news-carousel__cardsgroup::-webkit-scrollbar {
+  display: none;
+}
+
+.news-carousel__cardsgroup::-moz-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.news-carousel__wrap {
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
   white-space: nowrap;
   padding: 0.5rem 0;
 }
