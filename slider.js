@@ -23,7 +23,8 @@ class Slider {
         return this.#currentCardId;
     }
     set currentCardId(x) {
-        if (x >= this.els.length - 1) {
+        //на один меньше чем кличество
+        if (x >= this.els.length - 2) {
             this.max = true;
             this.viewport.dispatchEvent(this.#edgeOver);
             return;
@@ -52,17 +53,43 @@ class Slider {
     #moveToNextCard() {
         // productCards[currentProductCardId].scrollIntoView({behavior:"smooth", inline:"center"});
         //TODO: Не работает в Chrome! ?
+
+        //--- monitor ---
+        // function monitor() {
+        //     const monitorEl = document.querySelector(".top-carousel__title");
+        //     monitorEl.textContent = [...arguments].join(" ");
+        // }
+
+        //--- end monitor
         const gotStyle = getComputedStyle(this.els[this.currentCardId]);
         // const correction = 2;
         const widthCard =
-            this.els[0].offsetWidth +
+            this.els[this.currentCardId].offsetWidth +
             parseInt(gotStyle.marginRight) +
             parseInt(gotStyle.borderLeft);
+
+        // monitor(
+        //     "offsetWidth -",
+        //     this.els[this.currentCardId].offsetWidth,
+        //     "widthCard ->",
+        //     widthCard,
+        // );
+
         const nextPosition = widthCard * this.currentCardId;
-        this.viewport.scrollTo({
-            left: nextPosition,
-            top: 0,
-            behavior: "smooth",
-        });
+        //--- EXEC
+
+        // this.viewport.scrollTo({
+        //     left: nextPosition,
+        //     top: 0,
+        //     behavior: "smooth",
+        // });
+
+        // this.els.forEach(el => {
+        //     el.style.transform = `translateX(-${
+        //         widthCard * this.currentCardId
+        //     }px`;
+        // });
+
+        this.viewport.style.transform = `translateX(-${nextPosition}px)`;
     }
 }

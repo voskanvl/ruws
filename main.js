@@ -104,15 +104,15 @@ const productCards = document.querySelectorAll(".product-card");
 // };
 const right = document.querySelector(".top-controls__right");
 const left = document.querySelector(".top-controls__left");
-const group = document.querySelector(".top-carousel__cardsgroup");
+const wrap = document.querySelector(".top-carousel__wrap");
 
 // const moveToNextCard = (el) => {
 //     // productCards[currentProductCardId].scrollIntoView({behavior:"smooth", inline:"center"});
 //     //TODO: Не работает в Chrome! ?
 //     const gotStyle = getComputedStyle(el);
-const slider = new Slider(productCards, group);
-group.addEventListener("over", () => right.setAttribute("disable", true));
-group.addEventListener("under", () => left.setAttribute("disable", true));
+const slider = new Slider(productCards, wrap);
+wrap.addEventListener("over", () => right.setAttribute("disable", true));
+wrap.addEventListener("under", () => left.setAttribute("disable", true));
 right.addEventListener("click", () => {
     slider.inc();
     right.setAttribute("disable", slider.max);
@@ -123,3 +123,18 @@ left.addEventListener("click", () => {
     right.setAttribute("disable", slider.max);
     left.setAttribute("disable", slider.min);
 });
+
+//--- flickity
+
+// let elem = document.querySelector(".main-carousel");
+// let flkty = new Flickity(elem, {
+//     // options
+//     cellAlign: "left",
+//     contain: true,
+// });
+
+// element argument can be a selector string
+//   for an individual element
+// let flkty = new Flickity( '.main-carousel', {
+//   // options
+// });
