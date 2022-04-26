@@ -128,11 +128,16 @@ new SlideModel(newsCards, wrapNews, null, { left: leftNews, right: rightNews });
 //--- NOVELTY ---
 const noveltyImgs = document.querySelectorAll(".novelty__img");
 const noveltyWrap = document.querySelector(".novelty__wrap");
-let rightNovelty = document.querySelectorAll(".novelty__ellipse");
-rightNovelty = rightNovelty[rightNovelty.length - 1];
-const leftNovelty = document.querySelector(".novelty__ellipse");
+const controlsNovelties = document.querySelectorAll(".novelty__ellipse");
+// rightNovelty = rightNovelty[rightNovelty.length - 1];
+// const leftNovelty = document.querySelector(".novelty__ellipse");
 
-new SlideModel(noveltyImgs, noveltyWrap, null, {
-    left: leftNovelty,
-    right: rightNovelty,
-});
+// new SlideModel(noveltyImgs, noveltyWrap, null, {
+//     left: leftNovelty,
+//     right: rightNovelty,
+// });
+const noveltySlider = new SliderRandomAccess(
+    noveltyImgs,
+    noveltyWrap,
+    controlsNovelties,
+);
