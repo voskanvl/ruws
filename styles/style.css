@@ -849,6 +849,12 @@ menu {
   display: flex;
   overflow-x: scroll;
   padding: 5px;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+}
+
+.top-carousel__cardsgroup > .product-card {
+  scroll-snap-align: center;
 }
 
 .top-controls {
