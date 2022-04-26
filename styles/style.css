@@ -348,8 +348,13 @@
   cursor: pointer;
 }
 
-.novelty__ellipse-active {
+.novelty__ellipse[active="true"] {
   background: #fff;
+}
+
+.novelty__wrap {
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
 }
 
 .oil1 {

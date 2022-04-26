@@ -20,7 +20,10 @@ class SliderRandomAccess {
             console.log(idx, control.scrollWidth);
             control.addEventListener("click", () => {
                 this.#moveToCard(idx);
-                control.classList.add("novelty__ellipse-active");
+                controls[this.currentCardId].setAttribute("active", false);
+                control.setAttribute("active", true);
+                this.currentCardId = idx; //только для novelty
+                //TODO: сделать универсальным присвоение активного класса
             });
         });
     }
@@ -38,16 +41,5 @@ class SliderRandomAccess {
         const offset = viewportCenter - elementCenter;
 
         this.viewport.style.transform = `translateX(${offset}px)`;
-
-        // const gotStyle = getComputedStyle(this.els[this.currentCardId]);
-        // // const correction = 2;
-        // const widthCard =
-        //     this.els[this.currentCardId].offsetWidth +
-        //     parseInt(gotStyle.marginRight) +
-        //     parseInt(gotStyle.borderLeft);
-
-        // const nextPosition = widthCard * this.currentCardId;
-
-        // this.viewport.style.transform = `translateX(-${nextPosition}px)`;
     }
 }

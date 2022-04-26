@@ -61,27 +61,7 @@ class Slider {
             parseInt(gotStyle.marginRight) +
             parseInt(gotStyle.borderLeft);
 
-        // monitor(
-        //     "offsetWidth -",
-        //     this.els[this.currentCardId].offsetWidth,
-        //     "widthCard ->",
-        //     widthCard,
-        // );
-
         const nextPosition = widthCard * this.currentCardId;
-        //--- EXEC
-
-        // this.viewport.scrollTo({
-        //     left: nextPosition,
-        //     top: 0,
-        //     behavior: "smooth",
-        // });
-
-        // this.els.forEach(el => {
-        //     el.style.transform = `translateX(-${
-        //         widthCard * this.currentCardId
-        //     }px`;
-        // });
 
         this.viewport.style.transform = `translateX(-${nextPosition}px)`;
     }
