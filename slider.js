@@ -24,7 +24,7 @@ class Slider {
     }
     set currentCardId(x) {
         //на один меньше чем кличество
-        if (x >= this.els.length - 2) {
+        if (x >= this.els.length) {
             this.max = true;
             this.viewport.dispatchEvent(this.#edgeOver);
             return;
@@ -54,15 +54,23 @@ class Slider {
         // productCards[currentProductCardId].scrollIntoView({behavior:"smooth", inline:"center"});
         //TODO: Не работает в Chrome! ?
 
-        const gotStyle = getComputedStyle(this.els[this.currentCardId]);
-        // const correction = 2;
-        const widthCard =
-            this.els[this.currentCardId].offsetWidth +
-            parseInt(gotStyle.marginRight) +
-            parseInt(gotStyle.borderLeft);
+        // const gotStyle = getComputedStyle(this.els[this.currentCardId]);
+        // // const correction = 2;
+        // const widthCard =
+        //     this.els[this.currentCardId].offsetWidth +
+        //     parseInt(gotStyle.marginRight) +
+        //     parseInt(gotStyle.borderLeft);
 
-        const nextPosition = widthCard * this.currentCardId;
+        // const nextPosition = widthCard * this.currentCardId;
 
-        this.viewport.style.transform = `translateX(-${nextPosition}px)`;
+        const clientRect = this.els[this.currentCardId].getBoundingClientRect();
+        const elementCenter = clientRect.left + clientRect.width / 2;
+        //находим положение центра viewport
+        const viewportRect = this.viewport.getBoundingClientRect();
+        const viewportCenter = viewportRect.left + viewportRect.width / 2;
+        //находим смещение
+        const offset = viewportCenter - elementCenter;
+
+        this.viewport.style.transform = `translateX(${offset}px)`;
     }
 }
