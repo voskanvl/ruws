@@ -19,7 +19,7 @@ class SliderRandomAccess {
         this.controls.forEach((control, idx) => {
             console.log(idx, control.scrollWidth);
             control.addEventListener("click", () => {
-                this.#moveToCard(idx);
+                this.moveToCard(idx);
                 controls[this.currentCardId].setAttribute("active", false);
                 control.setAttribute("active", true);
                 this.currentCardId = idx; //только для novelty
@@ -27,11 +27,9 @@ class SliderRandomAccess {
             });
         });
     }
-    #moveToCard(n) {
-        // productCards[currentProductCardId].scrollIntoView({behavior:"smooth", inline:"center"});
-        //TODO: Не работает в Chrome! ?
-
+    moveToCard(n) {
         //находим положение центра n элемента
+        if (!n) n = this.currentCardId;
         const clientRect = this.els[n].getBoundingClientRect();
         const elementCenter = clientRect.left + clientRect.width / 2;
         //находим положение центра viewport

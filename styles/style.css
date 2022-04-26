@@ -301,6 +301,7 @@
 
 .novelty__images {
   white-space: nowrap;
+  overflow: hidden;
 }
 
 .novelty__img {
@@ -309,13 +310,13 @@
 }
 
 .novelty__img > img {
-  width: 50%;
-  -webkit-transform: translateX(50%);
-          transform: translateX(50%);
+  width: 100%;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
 }
 
 .novelty__shadow {
-  width: 40%;
+  width: 75%;
   height: 13px;
   z-index: 1;
   background: #0004;
@@ -1276,6 +1277,9 @@ menu {
   }
   .novelty {
     background-position: right bottom 165%;
+  }
+  .novelty__carousel {
+    width: 50%;
   }
   .discount__img {
     right: 0;
