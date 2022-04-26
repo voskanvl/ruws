@@ -54,13 +54,6 @@ class Slider {
         // productCards[currentProductCardId].scrollIntoView({behavior:"smooth", inline:"center"});
         //TODO: Не работает в Chrome! ?
 
-        //--- monitor ---
-        // function monitor() {
-        //     const monitorEl = document.querySelector(".top-carousel__title");
-        //     monitorEl.textContent = [...arguments].join(" ");
-        // }
-
-        //--- end monitor
         const gotStyle = getComputedStyle(this.els[this.currentCardId]);
         // const correction = 2;
         const widthCard =

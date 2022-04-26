@@ -87,47 +87,52 @@ catalog.addEventListener("click", ({ target }) => {
         }
     }
 });
-
+// --- SLIDER ---
+class SlideModel {
+    constructor(els, vieport, slider, { left, right }) {
+        slider = slider ? slider : Slider;
+        this.slider = new slider(els, vieport);
+        this.left = left;
+        this.right = right;
+        this.right.addEventListener("click", () => {
+            this.slider.inc();
+            this.right.setAttribute("disable", this.slider.max);
+            this.left.setAttribute("disable", this.slider.min);
+        });
+        this.left.addEventListener("click", () => {
+            this.slider.dec();
+            this.right.setAttribute("disable", this.slider.max);
+            this.left.setAttribute("disable", this.slider.min);
+        });
+    }
+}
 //--- TOP-PRODUCTS SLIDER ---
 const productCards = document.querySelectorAll(".product-card");
 const rightTop = document.querySelector(".top-controls__right");
 const leftTop = document.querySelector(".top-controls__left");
 const wrapTop = document.querySelector(".top-carousel__wrap");
 
-// const moveToNextCard = (el) => {
-//     // productCards[currentProductCardId].scrollIntoView({behavior:"smooth", inline:"center"});
-//     //TODO: Не работает в Chrome! ?
-//     const gotStyle = getComputedStyle(el);
-const sliderTop = new Slider(productCards, wrapTop);
-wrapTop.addEventListener("over", () => rightNews.setAttribute("disable", true));
-wrapTop.addEventListener("under", () => leftTop.setAttribute("disable", true));
-rightTop.addEventListener("click", () => {
-    sliderTop.inc();
-    rightTop.setAttribute("disable", sliderTop.max);
-    leftTop.setAttribute("disable", sliderTop.min);
-});
-leftTop.addEventListener("click", () => {
-    sliderTop.dec();
-    rightTop.setAttribute("disable", sliderTop.max);
-    leftTop.setAttribute("disable", sliderTop.min);
-});
+// // const moveToNextCard = (el) => {
+// //     // productCards[currentProductCardId].scrollIntoView({behavior:"smooth", inline:"center"});
+// //     //TODO: Не работает в Chrome! ?
+// //     const gotStyle = getComputedStyle(el);
+new SlideModel(productCards, wrapTop, null, { left: leftTop, right: rightTop });
 
 //--- NEWS ---
 const newsCards = document.querySelectorAll(".news-card");
 const wrapNews = document.querySelector(".news-carousel__wrap");
-console.log(wrapNews);
 const rightNews = document.querySelector(".news-carousel__controlsright");
 const leftNews = document.querySelector(".news-carousel__controlsleft");
-const sliderNews = new Slider(newsCards, wrapNews);
-rightNews.addEventListener("click", () => {
-    sliderNews.inc();
-    rightNews.setAttribute("disable", sliderNews.max);
-    leftNews.setAttribute("disable", sliderNews.min);
-});
-leftNews.addEventListener("click", () => {
-    sliderNews.dec();
-    rightNews.setAttribute("disable", sliderNews.max);
-    leftNews.setAttribute("disable", sliderNews.min);
-});
 
+new SlideModel(newsCards, wrapNews, null, { left: leftNews, right: rightNews });
 //--- NOVELTY ---
+const noveltyImgs = document.querySelectorAll(".novelty__img");
+const noveltyWrap = document.querySelector(".novelty__wrap");
+let rightNovelty = document.querySelectorAll(".novelty__ellipse");
+rightNovelty = rightNovelty[rightNovelty.length - 1];
+const leftNovelty = document.querySelector(".novelty__ellipse");
+
+new SlideModel(noveltyImgs, noveltyWrap, null, {
+    left: leftNovelty,
+    right: rightNovelty,
+});
