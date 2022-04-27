@@ -62,7 +62,6 @@ class Slider {
             this.min = false;
             this.#currentCardId = x;
         }
-        console.log("min -", this.min, "max -", this.max, this.#currentCardId);
     }
     #inc() {
         this.currentCardId++;
@@ -84,7 +83,6 @@ class Slider {
 
         this.currentOffset += offset;
         this.wraper.style.transform = `translateX(${this.currentOffset}px)`;
-        console.log("🚀 ~ this.currentOffset", offset, this.currentOffset);
     }
     getCurrentCard() {
         //определяем смещение vieport scroll = this.wraper.parentElement.scrollLeft

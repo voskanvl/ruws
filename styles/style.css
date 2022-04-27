@@ -1379,7 +1379,7 @@ menu {
     gap: 1rem;
   }
   .main-menu__item {
-    font-size: 14px;
+    font-size: 14;
   }
   .basket {
     margin-left: 1rem;
@@ -1391,8 +1391,8 @@ menu {
     display: none;
   }
   .main {
-    -ms-grid-columns: 160px auto;
-        grid-template-columns: 160px auto;
+    -ms-grid-columns: 0px auto;
+        grid-template-columns: 0px auto;
   }
   .big-head {
         grid-template-areas: "leftEl rightEl" "searchEl searchEl";
@@ -1424,12 +1424,6 @@ menu {
     width: 100%;
     padding-bottom: 2rem;
   }
-  .sub-menu__content .catalog__itembody {
-    padding: 10px;
-  }
-  .head__right {
-    display: none;
-  }
   .footer-header__form {
     width: 100%;
   }
@@ -1442,6 +1436,26 @@ menu {
     -webkit-box-flex: 0;
         -ms-flex: 0 0;
             flex: 0 0;
+  }
+  .sub-menu__content .catalog__itembody {
+    padding: 10px;
+  }
+  .head__right {
+    display: none;
+  }
+  .footer-footer__right.main-menu {
+    gap: 3rem;
+  }
+  .footer-footer > .main-menu__item {
+    font-size: 21px;
+  }
+  .footer-footer__leftwrap {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .footer-footer__title {
+    text-align: center;
   }
 }
 
@@ -1501,15 +1515,15 @@ menu {
     width: 50%;
   }
   .brand__img {
-    width: 100px;
-    height: 90px;
-    margin: 5px;
+    width: 130px;
+    margin: 20px;
+    margin-bottom: 10px;
   }
   .brand__img > img {
-    width: 80%;
+    width: 100%;
   }
   .brand__title {
-    font-size: 14px;
+    font-size: 18px;
     width: unset;
   }
   .brands {
@@ -1528,7 +1542,7 @@ menu {
   .catalog {
     padding: 1rem;
     position: absolute;
-    opacity: 1;
+    opacity: 0;
     z-index: 3;
     background: #fffd;
     border-radius: 3px;
@@ -1603,10 +1617,12 @@ menu {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 100%;
+  padding: 100px 0;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   height: 100%;
-  font-size: 22px;
+  font-size: 28px;
   text-align: center;
 }
 
@@ -1641,7 +1657,7 @@ menu {
 }
 
 .modal__close > svg {
-  fill: #fff;
+  fill: red;
 }
 
 *, *::before, *::after {
