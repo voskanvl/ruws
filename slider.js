@@ -17,6 +17,7 @@ class Slider {
     constructor(els, wraper, option) {
         this.els = [...els];
         this.wraper = wraper;
+        this.viewport = wraper.parentElement;
         this.currentCardId = 0;
         this.inc = this.#inc.bind(this);
         this.dec = this.#dec.bind(this);
@@ -27,11 +28,17 @@ class Slider {
         }, 0);
         this.#maxOffset = this.#commonWidth - wraper.clientWidth;
         //запрещаем прокрутку
-        ["scroll", "wheel", "touchmove"].forEach(type =>
+
+        // ["scroll", "wheel", "touchmove"].forEach(type =>
+        //     this.wraper.parentElement.addEventListener(type, ev => {
+        //         ev.preventDefault();
+        //     }),
+        // );
+
+        //если пользовательская прокрутка была, то вычисляем новый текущий элемент
+        ["wheel", "touchmove"].forEach(type =>
             this.wraper.parentElement.addEventListener(type, ev => {
-                // console.log("scroll", this);
-                // this.#currentCardId = this.getCurrentCard();
-                ev.preventDefault();
+                this.currentCardId = this.getCurrentCard();
             }),
         );
     }
@@ -55,7 +62,7 @@ class Slider {
             this.min = false;
             this.#currentCardId = x;
         }
-        console.log("min -", this.min, "max -", this.max);
+        console.log("min -", this.min, "max -", this.max, this.#currentCardId);
     }
     #inc() {
         // this.#currentCardId = this.getCurrentCard();
@@ -72,13 +79,16 @@ class Slider {
             this.els[this.currentCardId].getBoundingClientRect();
         const elementLeft = elementRect.x;
 
-        const wraperRect = this.wraper.getBoundingClientRect();
-        const wraperLeft = wraperRect.x;
+        // const wraperRect = this.wraper.getBoundingClientRect();
+        const viewportRect = this.viewport.getBoundingClientRect();
+        // const wraperLeft = wraperRect.x;
+        const viewportLeft = viewportRect.x;
 
-        const offset = wraperLeft - elementLeft;
+        // const offset = wraperLeft - elementLeft;
+        const offset = viewportLeft - elementLeft;
 
-        this.wraper.style.transform = `translateX(${offset}px)`;
-        this.currentOffset = offset;
+        this.currentOffset += offset;
+        this.wraper.style.transform = `translateX(${this.currentOffset}px)`;
         console.log("🚀 ~ this.currentOffset", offset, this.currentOffset);
     }
     getCurrentCard() {
@@ -95,6 +105,8 @@ class Slider {
             }
             currentWidth += widthEl;
         }
+
+        console.log("🚀 ~ currentElement", currentElement);
         return +currentElement;
     }
 }
