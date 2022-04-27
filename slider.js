@@ -7,6 +7,9 @@ class Slider {
     #edgeOver = new CustomEvent("over", { bubbles: true });
     #edgeUnder = new CustomEvent("under", { bubbles: true });
     #currentCardId;
+    #commonWidth;
+    #maxOffset;
+    currentOffset = 0;
     els = null;
     viewport = null;
     min = true;
@@ -18,12 +21,17 @@ class Slider {
         this.inc = this.#inc.bind(this);
         this.dec = this.#dec.bind(this);
         this.option = option;
+        this.#commonWidth = this.els.reduce((acc, el) => {
+            const gcs = getComputedStyle(el);
+            return acc + parseInt(gcs.width) + parseInt(gcs.marginRight);
+        }, 0);
+        this.#maxOffset = this.#commonWidth - viewport.clientWidth;
+        console.log(viewport, this.#commonWidth, this.#maxOffset);
     }
     get currentCardId() {
         return this.#currentCardId;
     }
     set currentCardId(x) {
-        //на один меньше чем кличество
         if (x >= this.els.length) {
             this.max = true;
             this.viewport.dispatchEvent(this.#edgeOver);
@@ -51,26 +59,17 @@ class Slider {
         this.#moveToNextCard();
     }
     #moveToNextCard() {
-        // productCards[currentProductCardId].scrollIntoView({behavior:"smooth", inline:"center"});
-        //TODO: Не работает в Chrome! ?
+        const elementRect =
+            this.els[this.currentCardId].getBoundingClientRect();
+        const elementLeft = elementRect.x;
 
-        // const gotStyle = getComputedStyle(this.els[this.currentCardId]);
-        // // const correction = 2;
-        // const widthCard =
-        //     this.els[this.currentCardId].offsetWidth +
-        //     parseInt(gotStyle.marginRight) +
-        //     parseInt(gotStyle.borderLeft);
-
-        // const nextPosition = widthCard * this.currentCardId;
-
-        const clientRect = this.els[this.currentCardId].getBoundingClientRect();
-        const elementCenter = clientRect.left + clientRect.width / 2;
-        //находим положение центра viewport
         const viewportRect = this.viewport.getBoundingClientRect();
-        const viewportCenter = viewportRect.left + viewportRect.width / 2;
-        //находим смещение
-        const offset = viewportCenter - elementCenter;
+        const viewportLeft = viewportRect.x;
+
+        const offset = viewportLeft - elementLeft;
 
         this.viewport.style.transform = `translateX(${offset}px)`;
+        this.currentOffset = offset;
+        console.log("🚀 ~ this.currentOffset", offset, this.currentOffset);
     }
 }
