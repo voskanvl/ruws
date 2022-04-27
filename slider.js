@@ -65,12 +65,10 @@ class Slider {
         console.log("min -", this.min, "max -", this.max, this.#currentCardId);
     }
     #inc() {
-        // this.#currentCardId = this.getCurrentCard();
         this.currentCardId++;
         this.#moveToNextCard();
     }
     #dec() {
-        // this.#currentCardId = this.getCurrentCard();
         this.currentCardId--;
         this.#moveToNextCard();
     }
@@ -79,12 +77,9 @@ class Slider {
             this.els[this.currentCardId].getBoundingClientRect();
         const elementLeft = elementRect.x;
 
-        // const wraperRect = this.wraper.getBoundingClientRect();
         const viewportRect = this.viewport.getBoundingClientRect();
-        // const wraperLeft = wraperRect.x;
         const viewportLeft = viewportRect.x;
 
-        // const offset = wraperLeft - elementLeft;
         const offset = viewportLeft - elementLeft;
 
         this.currentOffset += offset;

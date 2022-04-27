@@ -36,25 +36,7 @@ catalog.addEventListener("click", ({ target }) => {
         }
     }
 });
-// --- SLIDER ---
-class SlideModel {
-    constructor(els, vieport, slider, { left, right }) {
-        slider = slider ? slider : Slider;
-        this.slider = new slider(els, vieport);
-        this.left = left;
-        this.right = right;
-        this.right.addEventListener("click", () => {
-            this.slider.inc();
-            this.right.setAttribute("disable", this.slider.max);
-            this.left.setAttribute("disable", this.slider.min);
-        });
-        this.left.addEventListener("click", () => {
-            this.slider.dec();
-            this.right.setAttribute("disable", this.slider.max);
-            this.left.setAttribute("disable", this.slider.min);
-        });
-    }
-}
+
 //--- TOP-PRODUCTS SLIDER ---
 const productCards = document.querySelectorAll(".product-card");
 const rightTop = document.querySelector(".top-controls__right");
