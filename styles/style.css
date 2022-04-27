@@ -218,6 +218,7 @@
   text-transform: uppercase;
   font-size: 25px;
   letter-spacing: -1px;
+  mix-blend-mode: darken;
 }
 
 .panel .mark {
@@ -812,6 +813,12 @@ menu {
   margin-right: 21px;
 }
 
+@media screen and (max-width: 320px) {
+  .product-card {
+    padding: 10px;
+  }
+}
+
 .top-carousel {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -885,6 +892,28 @@ menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 320px) {
+  .top-controls {
+    margin-bottom: 1rem;
+  }
+}
+
+.slider-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem;
+  max-width: 1104px;
+  margin-left: 252px;
 }
 
 .top {
@@ -898,11 +927,17 @@ menu {
   display: flex;
 }
 
-.top__blank {
-  position: relative;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 252px;
-          flex: 0 0 252px;
+.top__title {
+  font-size: 30px;
+  font-weight: normal;
+  padding: 0 1rem;
+}
+
+@media screen and (max-width: 320px) {
+  .top__title {
+    font-size: 20px;
+    text-align: center;
+  }
 }
 
 .about__wrap {
@@ -1295,6 +1330,9 @@ menu {
   .catalog {
     opacity: 0;
   }
+  .slider-top {
+    margin-left: 0;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -1560,6 +1598,12 @@ menu {
   .oil1__img {
     bottom: 0;
   }
+  .slider-top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 320px) {
@@ -1740,7 +1784,7 @@ menu {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 15;
+  z-index: 9;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1777,7 +1821,7 @@ menu {
   background-color: rgba(255, 255, 255, 0.9);
 }
 
-.slider, .slider-news, .slider-novelty, .slider-top {
+.slider, .slider-news, .slider-novelty {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1804,6 +1848,12 @@ menu {
 .container-slider {
   max-width: 1356px;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 425px) {
+  .container-slider {
+    width: 100%;
+  }
 }
 
 .slider__container {
