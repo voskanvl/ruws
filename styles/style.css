@@ -1611,17 +1611,21 @@ menu {
   inset: 0;
   background: #000b;
   display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
 }
 
 .modal__body {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  padding: 100px 0;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  height: 100%;
   font-size: 28px;
   text-align: center;
 }
@@ -1638,6 +1642,7 @@ menu {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  gap: 2rem;
 }
 
 .modal__close {
@@ -1648,12 +1653,7 @@ menu {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   width: 32px;
-  padding: 1rem;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  padding-bottom: 4rem;
 }
 
 .modal__close > svg {
