@@ -11,6 +11,7 @@
     border-radius: 5px
     transform: translateX(0)
     transition: all 0.4s ease
+
     &:hover
         box-shadow: $box-shadow
     &__label
@@ -46,9 +47,9 @@
     &__footer
         display: flex
         justify-content: space-between
-    &__counter
-
-    &__basket
 
     &:not(:last-child)
         margin-right: 21px
+
+    @media screen and ( max-width: 320px )
+        padding: 10px

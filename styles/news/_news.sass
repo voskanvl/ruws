@@ -2,7 +2,7 @@
 @import "./_news-card"
 @import "./_news-carousel"
 .news
-    margin: 0 0 200px 236px
+    margin: 0 0 200px 0px
     @media screen and (max-width: 1024px)
         margin: 0 0 100px 0
     &__wrap
@@ -11,4 +11,5 @@
     &__title
         font-size: 30px
         font-weight: normal
-        margin-bottom: 20px
+        max-width: $width__max
+        margin: 0 auto 20px

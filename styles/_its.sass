@@ -1,6 +1,6 @@
 @import "./_chief-slider"
 @import "./_consts"
-.slider,.slider-news,.slider-novelty,.slider-top
+.slider,.slider-news,.slider-novelty
     display: flex
 .slider__control
     background: none
@@ -15,6 +15,9 @@
 .container-slider
     max-width: $width__max
     margin: 0 auto
+
+    @media screen and ( max-width: 425px )
+        width: 100%
 
 .slider__container
     padding-left: 0

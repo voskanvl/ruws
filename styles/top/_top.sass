@@ -1,6 +1,7 @@
 @import "../_consts"
 @import "./_top-carousel"
 @import "./_top-controls"
+@import "./_slider-top"
 .top
     left: 0
     right: 0
@@ -9,6 +10,11 @@
     margin: 0 -1rem
     display: flex
     // justify-content: flex-end
-    &__blank
-        position: relative
-        flex: 0 0 252px
+    &__title
+        font-size: 30px
+        font-weight: normal
+        padding: 0 1rem
+    @media screen and ( max-width: 320px )
+        &__title
+            font-size: 20px
+            text-align: center
