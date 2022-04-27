@@ -1257,6 +1257,8 @@ menu {
   .main {
     margin-top: 3rem;
         grid-template-areas: "catalog general" "catalog general" "brands brands";
+    -ms-grid-columns: 0 auto;
+        grid-template-columns: 0 auto;
   }
   .top-carousel {
     left: unset;
@@ -1289,6 +1291,9 @@ menu {
   }
   .main-menu {
     padding-left: 1rem;
+  }
+  .catalog {
+    opacity: 0;
   }
 }
 
@@ -1660,4 +1665,11 @@ h2 {
 button[disable="true"] {
   opacity: 0.2;
   pointer-events: none;
+}
+
+.scroll-content {
+  -webkit-transition: -webkit-transform 0.4s ease;
+  transition: -webkit-transform 0.4s ease;
+  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, -webkit-transform 0.4s ease;
 }
