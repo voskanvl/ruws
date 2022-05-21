@@ -24,14 +24,14 @@ module.exports = {
     },
     //entry: `${paths.src}/index.js`,
     entry: {
-        about: `${paths.src}/js/pages/about.js`,
-        articles: `${paths.src}/js/pages/articles.js`,
-        articles1: `${paths.src}/js/pages/articles.js`,
-        blank: `${paths.src}/js/pages/blank.js`,
-        contacts: `${paths.src}/js/pages/contacts.js`,
-        index: `${paths.src}/js/pages/app.js`,
-        production: `${paths.src}/js/pages/production.js`,
-        projects: `${paths.src}/js/pages/projects.js`,
+        // about: `${paths.src}/js/pages/about.js`,
+        // articles: `${paths.src}/js/pages/articles.js`,
+        // articles1: `${paths.src}/js/pages/articles.js`,
+        // blank: `${paths.src}/js/pages/blank.js`,
+        // contacts: `${paths.src}/js/pages/contacts.js`,
+        index: `${paths.src}/js/pages/index.js`,
+        // production: `${paths.src}/js/pages/production.js`,
+        // projects: `${paths.src}/js/pages/projects.js`,
     },
     // entry: {
     //     ...PAGES.reduce(
