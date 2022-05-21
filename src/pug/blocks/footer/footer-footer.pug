@@ -1,0 +1,17 @@
+.footer-footer__wrap
+    .footer-footer__left
+        .footer-footer__leftwrap
+            .footer-footer__logo
+                img(src="../../assets/logo 2.png" alt="logo")
+            .footer-footer__title ИНТЕРНЕТ-МАГАЗИН ОБОРУДОВАНИЯ ДЛЯ ВНЕДОРОЖНИКОВ
+    .footer-footer__right
+        ul.footer-footer__right.main-menu
+            - const menu = ["О компании","Доставка и оплата","Как сделать заказ","Новости","Контакты"]
+            each i in menu
+                li.main-menu__item.main-menu__item-bottom
+                    a(href="#")= i
+        .footer-footer__pays
+            a(href="#")
+                img(src="../../assets/Mir-01 1.png" alt="mir")
+            a(href="#")
+                img(src="../../assets/visa_PNG30 1.png" alt="visa")

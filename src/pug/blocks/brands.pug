@@ -1,0 +1,20 @@
+h2 Подбор по производителю
+.brands__wrap
+    - 
+        const cars=[
+            {img:"../../assets/brands/trx-back 1.png",name:"4Revo",alt:"trx-back 1"},
+            {img:"../../assets/brands/logo4х4-golden 3.png",name:"4х4 на 'Электролебедка.ру'",alt:"logo4х4-golden"},
+            {img:"../../assets/brands/logo-comeup 1.png",name:"ComeUp",alt:"comeup"},
+            {img:"../../assets/brands/top-back 2.png",name:"4x4 sport",alt:"4х4sport"},
+            {img:"../../assets/brands/logo 6.png",name:"4х4 Вятка",alt:"4х4 вятка"},
+            {img:"../../assets/brands/logo (1) 2.png",name:"Aurora",alt:"aurora"},
+            {img:"../../assets/brands/ojeep 1.png",name:"Ojeep",alt:"ojeep"},
+            {img:"../../assets/brands/hardway-logo-68x46 1.png",name:"Hardway",alt:"hardway"},
+            {img:"../../assets/brands/master-winch-logo 1.png",name:"Master Winch",alt:"master winch"},
+            {img:"../../assets/brands/PajeroShop 1.png",name:"Pajero Shop",alt:"pajero shop"}
+        ]
+    each i in cars
+        a.brand(href="#")
+            .brand__img
+                img(src=i.img alt=i.alt)
+            .brand__title= i.name  

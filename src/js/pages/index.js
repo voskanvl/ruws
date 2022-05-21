@@ -78,6 +78,11 @@ if (document.readyState === "loading") {
 }
 function start() {
     setTimeout(() => {
+        const restoreHeight = () => {
+            carouselTop.style.height = "";
+            // carouselNovelty.style.height = "";
+            carouselNews.style.height = "";
+        };
         const carouselTop = document.querySelector(".carousel-top");
         const carouselNovelty = document.querySelector(".carousel-novelty");
         const carouselNews = document.querySelector(".carousel-news");
@@ -99,8 +104,7 @@ function start() {
             padding: 200,
             fullWidth: true,
         });
-        carouselTop.style.height = "";
-        // carouselNovelty.style.height = "";
-        carouselNews.style.height = "";
+        restoreHeight();
+        window.addEventListener("resize", restoreHeight);
     }, 0);
 }

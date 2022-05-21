@@ -1,6 +1,9 @@
-mixin productCard(img, price, name)
+mixin productCard(img, price, name, has="true")
     .product-card
-        .product-card__label.product-card__label-active
+        if has==="true"
+            .product-card__label.product-card__label-active
+        else 
+            .product-card__label.product-card__label-passive
         .product-card__img
             img(src=img alt="")
         .product-card__price= price
