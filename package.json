@@ -46,6 +46,7 @@
     "dependencies": {
         "imask": "^6.4.2",
         "inputmask": "^5.0.7",
+        "materialize-css": "^1.0.0-rc.2",
         "serve": "^13.0.2"
     }
 }

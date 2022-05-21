@@ -28,7 +28,8 @@
 @import "./media/_320"
 @import "./modal/_modal"
 
-@import "./_its"
+// @import "./_its"
+@import "./_material-carousel"
 
 *,*::before,*::after
     box-sizing: border-box
@@ -47,3 +48,18 @@ h2
 button[disable="true"]
     opacity: 0.2
     pointer-events: none
+
+.slider__container
+    width: 100%
+.slider-novelty
+    width: 100%
+    & .indicators
+        position: absolute
+        bottom: 0
+        padding: 0
+        transform: translateY(150%)
+    & > .carousel-novelty
+        overflow: unset
+        // overflow-x: hidden
+.container-slider
+    width: 100%

@@ -1,4 +1,5 @@
 extends ../layout/regular.pug
+include ../../components/product-card/product-card.pug
 block page 
     .container
         header.main-head
@@ -14,7 +15,7 @@ block page
                                     clipPath(id="clip0_2_657")
                                         rect(width="16" height="16" fill="white")
                         .geo__location Пенза
-                    ul.head__right main-menu
+                    ul.head__right.main-menu
                         li.main-menu__item.main-menu__item-top
                             a(href="#") О компании
                         li.main-menu__item.main-menu__item-top
@@ -220,26 +221,19 @@ block page
                                 Lorem ipsum dolor sit amet consectetur,
                                 adipisicing elit.
                             .novelty__carousel
-                                .container-slider
                                     .slider-novelty
-                                        div(style="display: none")
-                                            .top-controls
-                                                button.slider__control(href="#" data-slide="prev" )
-                                                button.slider__control(href="#" data-slide="next" )
-                                        .slider__container
-                                            .slider__wrapper
-                                                .slider__items
-                                                    .slider__item.slider__item_100.novelty__img
+                                        //- div(style="display: none")
+                                        //-     .top-controls
+                                        //-         button.slider__control(href="#" data-slide="prev" )
+                                        //-         button.slider__control(href="#" data-slide="next" )
+                                        //- .slider__container
+                                        .slider__items.carousel.carousel-novelty
+                                            each i in [0,1,2]
+                                                .slider__item.slider__item_100.novelty__img.carousel-item
+                                                    .carousel-novelty__images
+                                                        img(src="../../assets/5522-315x260 1.png" alt="")
                                                         img.novelty__shadow(src="../../assets/5522-315x260 1.png" alt="")
-                                                    .slider__item.slider__item_100.novelty__img
-                                                            img.novelty__shadow(src="../../assets/5522-315x260 1.png" alt="")
-                                                    .slider__item.slider__item_100.novelty__img
-                                                        img.novelty__shadow(src="../../assets/5522-315x260 1.png" alt="")
-                                        ol.slider__indicators
-                                            li(data-slide-to="0")
-                                            li(data-slide-to="1")
-                                            li(data-slide-to="2")
-                        .oil1
+                        .panel.oil1
                             .panel__title-f18.
                                 Пульт дистанционный блока управления RUNVA серии
                                 EWB
@@ -249,7 +243,7 @@ block page
                             .panel__price.panel__price-f20.
                                 2 120
                             img.oil1__img(src="../../assets/runva-ewb-315x260 1.png" alt="")
-                        .oil2
+                        .panel.oil2
                             .panel__title-f18.
                                 Фара дальнего света РИФ 160 мм 18W LED
                             .panel__body.
@@ -288,44 +282,44 @@ block page
                                 button.slider__control(href="#" data-slide="prev")
                                 button.slider__control(href="#" data-slide="next")
                         .slider__container
-                            .slider__wrapper
-                                .slider__items
-                                    - 
-                                        const arr = [
-                                            "../../assets/top-products/Rectangle 46.png",
-                                            "../../assets/top-products/Rectangle 47.png",
-                                            "../../assets/top-products/Rectangle 48.png",
-                                            "../../assets/top-products/Rectangle 46.png",
-                                            "../../assets/top-products/Rectangle 47.png",
-                                            "../../assets/top-products/Rectangle 48.png"
-                                            ]
-                                    each i in arr
-                                        .slider__item
-                                            .product-card
-                                                .product-card__label.product-card__label-active
-                                                .product-card__img
-                                                    img(src=i alt="")
-                                                .product-card__price 10 590
-                                                .product-card__body=  "Домкрат реечный Hi-lift 120см (чугун)"
-                                                
-                                                .product-card__footer
-                                                    .product-card__counter.counter
-                                                        button.counter__plus
-                                                            svg(width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" )
-                                                                line(x1="8.74228e-08" y1="6" x2="12" y2="6" stroke="#92817B" stroke-width="2" )
-                                                                line(x1="6" y1="-1.09311e-08" x2="6" y2="12" stroke="#92817B" stroke-width="2" )
-                                                        span.counter__value 1
-                                                        button.counter__minus
-                                                            svg(width="10" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg" )
-                                                                line(y1="1" x2="10" y2="1" stroke="#92817B" stroke-width="2")
-                                                    .product-card__basket
-                                                        svg(width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg" )
-                                                            g(clip-path="url(#clip0_2_458)")
-                                                                path(d="M32.0925 9.81751C31.4325 9.07501 30.525 8.58001 29.535 8.58001H16.83C16.4175 8.58001 16.005 8.91001 16.005 9.40501C16.005 9.90001 16.4175 10.23 16.83 10.23H29.535C30.03 10.23 30.525 10.4775 30.855 10.8075C31.185 11.22 31.35 11.715 31.185 12.21L30.4425 16.335H21.3675C20.955 16.335 20.5425 16.665 20.5425 17.16C20.5425 17.655 20.955 17.985 21.3675 17.985H30.195L29.4525 21.945C29.37 22.5225 28.7925 22.935 28.215 22.935H12.375C11.7975 22.935 11.3025 22.5225 11.1375 21.945L7.92001 4.04251C7.83751 3.63001 7.50751 3.38251 7.09501 3.38251H0.742511C0.330011 3.38251 -0.082489 3.71251 -0.082489 4.20751C-0.082489 4.70251 0.330011 5.03251 0.742511 5.03251H6.43501L9.57001 22.3575C9.73501 23.5125 10.56 24.3375 11.6325 24.6675C11.22 25.245 10.89 25.9875 10.89 26.8125C10.89 28.875 12.54 30.525 14.6025 30.525C16.665 30.525 18.315 28.875 18.315 26.8125C18.315 26.07 18.0675 25.3275 17.655 24.75H22.6875C22.275 25.3275 22.0275 26.07 22.0275 26.8125C22.0275 28.875 23.6775 30.525 25.74 30.525C27.8025 30.525 29.4525 28.875 29.4525 26.8125C29.4525 25.9875 29.205 25.245 28.7925 24.6675C29.865 24.42 30.7725 23.5125 31.02 22.3575L32.835 12.6225C33 11.6325 32.7525 10.6425 32.0925 9.81751ZM16.665 26.73C16.665 27.885 15.7575 28.7925 14.6025 28.7925C13.4475 28.7925 12.54 27.885 12.54 26.73C12.54 25.575 13.4475 24.6675 14.6025 24.6675C15.7575 24.6675 16.665 25.575 16.665 26.73ZM25.8225 28.7925C24.6675 28.7925 23.76 27.885 23.76 26.73C23.76 25.575 24.6675 24.6675 25.8225 24.6675C26.9775 24.6675 27.885 25.575 27.885 26.73C27.885 27.885 26.9775 28.7925 25.8225 28.7925Z" fill="#2B292B" )
-                                                            defs
-                                                                clipPath(id="clip0_2_458")
-                                                                    rect(width="33" height="33" fill="white")
-            
+                            .carousel.carousel-top
+                                - 
+                                    const arr = [
+                                        "../../assets/top-products/Rectangle 46.png",
+                                        "../../assets/top-products/Rectangle 47.png",
+                                        "../../assets/top-products/Rectangle 48.png",
+                                        "../../assets/top-products/Rectangle 46.png",
+                                        "../../assets/top-products/Rectangle 47.png",
+                                        "../../assets/top-products/Rectangle 48.png"
+                                        ]
+                                each i in arr
+                                    .slider__item.carousel-item
+                                        +productCard(i,"10 590","Домкрат реечный Hi-lift 120см (чугун)")
+                                        //- .product-card
+                                        //-     .product-card__label.product-card__label-active
+                                        //-     .product-card__img
+                                        //-         img(src=i alt="")
+                                        //-     .product-card__price 10 590
+                                        //-     .product-card__body=  "Домкрат реечный Hi-lift 120см (чугун)"
+                                            
+                                        //-     .product-card__footer
+                                        //-         .product-card__counter.counter
+                                        //-             button.counter__plus
+                                        //-                 svg(width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" )
+                                        //-                     line(x1="8.74228e-08" y1="6" x2="12" y2="6" stroke="#92817B" stroke-width="2" )
+                                        //-                     line(x1="6" y1="-1.09311e-08" x2="6" y2="12" stroke="#92817B" stroke-width="2" )
+                                        //-             span.counter__value 1
+                                        //-             button.counter__minus
+                                        //-                 svg(width="10" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg" )
+                                        //-                     line(y1="1" x2="10" y2="1" stroke="#92817B" stroke-width="2")
+                                        //-         .product-card__basket
+                                        //-             svg(width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg" )
+                                        //-                 g(clip-path="url(#clip0_2_458)")
+                                        //-                     path(d="M32.0925 9.81751C31.4325 9.07501 30.525 8.58001 29.535 8.58001H16.83C16.4175 8.58001 16.005 8.91001 16.005 9.40501C16.005 9.90001 16.4175 10.23 16.83 10.23H29.535C30.03 10.23 30.525 10.4775 30.855 10.8075C31.185 11.22 31.35 11.715 31.185 12.21L30.4425 16.335H21.3675C20.955 16.335 20.5425 16.665 20.5425 17.16C20.5425 17.655 20.955 17.985 21.3675 17.985H30.195L29.4525 21.945C29.37 22.5225 28.7925 22.935 28.215 22.935H12.375C11.7975 22.935 11.3025 22.5225 11.1375 21.945L7.92001 4.04251C7.83751 3.63001 7.50751 3.38251 7.09501 3.38251H0.742511C0.330011 3.38251 -0.082489 3.71251 -0.082489 4.20751C-0.082489 4.70251 0.330011 5.03251 0.742511 5.03251H6.43501L9.57001 22.3575C9.73501 23.5125 10.56 24.3375 11.6325 24.6675C11.22 25.245 10.89 25.9875 10.89 26.8125C10.89 28.875 12.54 30.525 14.6025 30.525C16.665 30.525 18.315 28.875 18.315 26.8125C18.315 26.07 18.0675 25.3275 17.655 24.75H22.6875C22.275 25.3275 22.0275 26.07 22.0275 26.8125C22.0275 28.875 23.6775 30.525 25.74 30.525C27.8025 30.525 29.4525 28.875 29.4525 26.8125C29.4525 25.9875 29.205 25.245 28.7925 24.6675C29.865 24.42 30.7725 23.5125 31.02 22.3575L32.835 12.6225C33 11.6325 32.7525 10.6425 32.0925 9.81751ZM16.665 26.73C16.665 27.885 15.7575 28.7925 14.6025 28.7925C13.4475 28.7925 12.54 27.885 12.54 26.73C12.54 25.575 13.4475 24.6675 14.6025 24.6675C15.7575 24.6675 16.665 25.575 16.665 26.73ZM25.8225 28.7925C24.6675 28.7925 23.76 27.885 23.76 26.73C23.76 25.575 24.6675 24.6675 25.8225 24.6675C26.9775 24.6675 27.885 25.575 27.885 26.73C27.885 27.885 26.9775 28.7925 25.8225 28.7925Z" fill="#2B292B" )
+                                        //-                 defs
+                                        //-                     clipPath(id="clip0_2_458")
+                                        //-                         rect(width="33" height="33" fill="white")
+        
             article.about
                 .about__wrap
                     section.about__body
@@ -359,9 +353,9 @@ block page
                         button.slider__control(href="#" data-slide="prev")
                         .slider__container
                             .slider__wrapper
-                                .slider__items
+                                .carousel.carousel-news
                                     each i in [0,1,2,3,4]
-                                        .slider__item
+                                        .slider__item.carousel-item
                                             .news-carousel__card.news-card
                                                 .news-card__img
                                                     img(src="../../assets/photo-3-svgrepo-com 1.svg" alt="")
@@ -385,7 +379,7 @@ block page
                                             
                         button.slider__control(href="#" data-slide="next")
             footer.footer
-                header.footer__header footer-header
+                header.footer__header.footer-header
                     .footer-header__wrap
                         .footer-header__text.
                             Мы проводим специальные акции для наших клиентов.
