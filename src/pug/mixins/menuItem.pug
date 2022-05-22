@@ -1,5 +1,5 @@
-mixin menuItem(name)
-    li.catalog__item
+mixin menuItem(name,data)
+    li.catalog__item(data-id=data)
         .catalog__itembody
             span= name
             span.expand-arrow__pic-close

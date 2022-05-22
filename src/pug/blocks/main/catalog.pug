@@ -1,8 +1,8 @@
 ul.catalog
     - menus=["Для монтажа","Тросы","Клюзы","Роликовые направляющие", "Стропы","Крюки","Шаклы","Блоки","Пульты","Наборы","Домкраты","Бамперы силовые","Свет","Аксессуары","Запчасти"]
-    each i in menus
+    each i,idx in menus
         if i==="Роликовые направляющие"
-            +menuItem(i)
+            +menuItem(i,idx)
                 ul.sub-menu__content
                     li.catalog__item
                         .catalog__itembody
@@ -11,4 +11,4 @@ ul.catalog
                         .catalog__itembody
                             span Алюминиевый клюз
         else
-            +menuItem(i)
+            +menuItem(i,idx)
