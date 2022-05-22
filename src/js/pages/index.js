@@ -118,7 +118,7 @@ function start() {
         const carouselNewsCarousel = M.Carousel.init(carouselNews, {
             indicators: false,
             numVisible: 3,
-            padding: 200,
+            padding: 27,
             fullWidth: true,
         });
         restoreHeight();
