@@ -11,9 +11,11 @@
     transition: opacity 0.8s ease
     &__item
         list-style: none
+        position: relative
+        display: block
 
     &__itembody
-        cursor: pointer
+
         box-sizing: border-box
         width: 100%
         max-width: $width__catalog
@@ -30,6 +32,11 @@
         & > a
             color: currentColor
             text-decoration: none
+            cursor: pointer
+            &::after
+                content: ""
+                position: absolute
+                inset: 0
         & > a:first-child
             overflow: hidden
             white-space: nowrap

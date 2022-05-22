@@ -1,7 +1,7 @@
-mixin menuItem(name,data,exect="false")
+mixin menuItem(name,data,exac="false")
     li.catalog__item(data-id=data)
         .catalog__itembody
-            if exect==="true"
+            if exac==="true"
                 span= name
             else
                 a(href="category.html")= name
