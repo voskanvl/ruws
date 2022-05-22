@@ -1,0 +1,8 @@
+mixin oil(img, price, title="Пульт дистанционный блока управления RUNVA серии EWB", body)
+    .panel__title-f18= title
+    if body
+        .panel__body= body
+    else
+        .panel__body Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    .panel__price.panel__price-f20= price
+    img.oil1__img(src=img alt="")

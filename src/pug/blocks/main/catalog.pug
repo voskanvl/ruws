@@ -1,0 +1,14 @@
+ul.catalog
+    - menus=["Для монтажа","Тросы","Клюзы","Роликовые направляющие", "Стропы","Крюки","Шаклы","Блоки","Пульты","Наборы","Домкраты","Бамперы силовые","Свет","Аксессуары","Запчасти"]
+    each i in menus
+        if i==="Роликовые направляющие"
+            +menuItem(i)
+                ul.sub-menu__content
+                    li.catalog__item
+                        .catalog__itembody
+                            span Чугунный клюз
+                    li.catalog__item
+                        .catalog__itembody
+                            span Алюминиевый клюз
+        else
+            +menuItem(i)
