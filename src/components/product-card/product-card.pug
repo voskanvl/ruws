@@ -4,7 +4,7 @@ mixin productCard(img, price, name, has="true")
             .product-card__label.product-card__label-active
         else 
             .product-card__label.product-card__label-passive
-        .product-card__img
+        a.product-card__img(href="product.html")
             img(src=img alt="")
         .product-card__price= price
         .product-card__body= name
