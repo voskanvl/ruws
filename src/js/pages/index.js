@@ -103,19 +103,19 @@ function start() {
         const carouselTop = document.querySelector(".carousel-top");
         const carouselNovelty = document.querySelector(".carousel-novelty");
         const carouselNews = document.querySelector(".carousel-news");
-        M.Carousel.init(carouselTop, {
+        const carouselTopCarousel = M.Carousel.init(carouselTop, {
             indicators: false,
             numVisible: 3,
             padding: 200,
             fullWidth: true,
         });
-        M.Carousel.init(carouselNovelty, {
+        const carouselNoveltyCarousel = M.Carousel.init(carouselNovelty, {
             indicators: true,
             numVisible: 1,
             padding: 400,
             fullWidth: true,
         });
-        M.Carousel.init(carouselNews, {
+        const carouselNewsCarousel = M.Carousel.init(carouselNews, {
             indicators: false,
             numVisible: 3,
             padding: 200,
@@ -123,5 +123,24 @@ function start() {
         });
         restoreHeight();
         window.addEventListener("resize", restoreHeight);
+        //--- обработчики листания каруселей
+        //--- для TOP
+        const topPrev = document.querySelector(
+            '.slider-top button[data-slide="prev"',
+        );
+        const topNext = document.querySelector(
+            '.slider-top button[data-slide="next"',
+        );
+        topNext.onclick = () => carouselTopCarousel.next();
+        topPrev.onclick = () => carouselTopCarousel.prev();
+        //--- для News
+        const newsPrev = document.querySelector(
+            '.slider-news button[data-slide="prev"',
+        );
+        const newsNext = document.querySelector(
+            '.slider-news button[data-slide="next"',
+        );
+        newsNext.onclick = () => carouselNewsCarousel.next();
+        newsPrev.onclick = () => carouselNewsCarousel.prev();
     }, 0);
 }

@@ -38,6 +38,7 @@ body
     font-family: Roboto, sans-serif
     padding: 0
     margin: 0
+    overflow-x: hidden
     color: $color__black-super
 
 h2
@@ -63,3 +64,15 @@ button[disable="true"]
         // overflow-x: hidden
 .container-slider
     width: 100%
+.slider-news
+    display: flex
+    align-items: center
+.slider__control
+    height: 28px
+    width: 28px
+    border: none
+    cursor: pointer
+    &[data-slide="prev"]
+        background: transparent url("../assets/svg/prev.svg") no-repeat
+    &[data-slide="next"]
+        background: transparent url("../assets/svg/next.svg") no-repeat
