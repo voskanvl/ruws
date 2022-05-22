@@ -30,6 +30,7 @@ module.exports = {
         // blank: `${paths.src}/js/pages/blank.js`,
         // contacts: `${paths.src}/js/pages/contacts.js`,
         index: `${paths.src}/js/pages/index.js`,
+        category: `${paths.src}/js/pages/category.js`,
         // production: `${paths.src}/js/pages/production.js`,
         // projects: `${paths.src}/js/pages/projects.js`,
     },
