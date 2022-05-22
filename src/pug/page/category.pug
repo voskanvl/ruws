@@ -61,6 +61,7 @@ block page
                 .category__items
                     each i in arr
                         +productCard(i.img,i.price,i.name, i.presence)
+                .category__pagination Показано с 1 по 9 из 12 (страниц: 1)
         footer.footer
             header.footer__header.footer-header
                 include ../blocks/footer/footer-header.pug

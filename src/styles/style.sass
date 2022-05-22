@@ -78,22 +78,27 @@ button[disable="true"]
         background: transparent url("../assets/svg/next.svg") no-repeat
         background-position: 100% 0
 
-.category__items
-    display: grid
-    grid-template-columns: repeat(3,1fr)
-    place-items: start center
-    grid-row-gap: 2em
+.category
+    &__items
+        display: grid
+        grid-template-columns: repeat(3,1fr)
+        place-items: start center
+        grid-row-gap: 2em
 
-    margin: 1em
-    padding: 1em 0
-.category__form
-    margin: 1em
-    font-size: 16px
-    display: flex
-    align-items: center
-    justify-content: flex-end
-    column-gap: 1em
-    & > span
-        font-weight: 500
-    & > select
-        padding: 0.5em
+        margin: 1em
+        padding: 1em 0
+    &__form
+        margin: 1em
+        font-size: 16px
+        display: flex
+        align-items: center
+        justify-content: flex-end
+        column-gap: 1em
+        & > span
+            font-weight: 500
+        & > select
+            padding: 0.5em
+    &__pagination
+        text-align: right
+        font-size: 18px
+        color: #92817B
