@@ -7,5 +7,7 @@ mixin options(arr)
             .options__caption Производитель
             each i in arr 
                 .options__vendor
-                    input(type="checkbox" name="vendor")
-                    label= i
+                    .checkbox
+                        .checkbox__box
+                        input.checkbox__input(type="checkbox" name="vendor")
+                        label.checkbox__label= i

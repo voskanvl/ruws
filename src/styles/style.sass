@@ -120,9 +120,43 @@ article.main
         padding: 11px 17px
     &__vendor:not(:last-child)
         margin-bottom: 16px
-    &  input[type="checkbox"]
-        margin-right: 11px
-        &:checked
-            filter: hue-rotate(165deg) brightness(1.7)
+
 .middle
     margin-top: 20px
+
+.checkbox
+    $size: 13px
+    $check: 11px
+    $color: #FAAC3D
+    position: relative
+    & > input[type="checkbox"]
+        position: relative
+        margin-right: 1em
+        &::before
+            content: ""
+            position: absolute
+            z-index: 2
+            border: solid $color
+            border-width: 1px
+            width: $size
+            height: $size
+            border-radius: 2px
+            background: #fff
+        &::after
+            content: ""
+            box-sizing: border-box
+            position: absolute
+            z-index: 3
+            width: $check
+            height: calc($check / 1.5)
+            border-left: solid #fff
+            border-left-width: calc($check / 3)
+            border-bottom: solid #fff
+            border-bottom-width: calc($check / 3)
+            transform: rotate(-50deg) translate(10%,30%) skewX(-10deg)
+            transform-origin: center
+            opacity: 0
+        &:checked::before
+            background: $color
+        &:checked::after
+            opacity: 1
