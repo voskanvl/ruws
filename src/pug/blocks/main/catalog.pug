@@ -1,14 +1,17 @@
-ul.catalog
-    - menus=["Для монтажа","Тросы","Клюзы","Роликовые направляющие", "Стропы","Крюки","Шаклы","Блоки","Пульты","Наборы","Домкраты","Бамперы силовые","Свет","Аксессуары","Запчасти"]
-    each i,idx in menus
-        if i==="Роликовые направляющие"
-            +menuItem(i,idx,"true")
-                ul.sub-menu__content
-                    li.catalog__item
-                        .catalog__itembody
-                            a(href="category.html") Чугунный клюз
-                    li.catalog__item
-                        .catalog__itembody
-                            a(href="category.html") Алюминиевый клюз
-        else
-            +menuItem(i,idx)
+mixin catalog
+    ul.catalog
+        - menus=["Для монтажа","Тросы","Клюзы","Роликовые направляющие", "Стропы","Крюки","Шаклы","Блоки","Пульты","Наборы","Домкраты","Бамперы силовые","Свет","Аксессуары","Запчасти"]
+        each i,idx in menus
+            if i==="Роликовые направляющие"
+                +menuItem(i,idx,"true")
+                    ul.sub-menu__content
+                        li.catalog__item
+                            .catalog__itembody
+                                a(href="category.html") Чугунный клюз
+                        li.catalog__item
+                            .catalog__itembody
+                                a(href="category.html") Алюминиевый клюз
+            else
+                +menuItem(i,idx)
+        li.catalog__item
+            block

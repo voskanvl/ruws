@@ -30,6 +30,7 @@
 
 // @import "./_its"
 @import "./_material-carousel"
+// @import "../components/range/range"
 
 *,*::before,*::after
     box-sizing: border-box
@@ -102,3 +103,25 @@ button[disable="true"]
         text-align: right
         font-size: 18px
         color: #92817B
+article.main
+    @import "../components/range/range"
+.options
+    width: 100%
+    border: 1px solid #E5ECF3
+    border-radius: 3px
+    &__caption
+        margin-bottom: 11px
+    &__price
+        border-bottom: 1px solid #E5ECF3
+        height: 95px
+        padding: 11px 17px
+    &__vendors
+        margin: 10px 0
+    &__vendor:not(:last-child)
+        margin-bottom: 16px
+    &  input[type="checkbox"]
+        margin-right: 11px
+        &:checked
+            filter: hue-rotate(165deg) brightness(1.7)
+.middle
+    margin-top: 20px

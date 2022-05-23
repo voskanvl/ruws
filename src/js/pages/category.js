@@ -1,4 +1,5 @@
 import "../../styles/style.sass";
+import "../../components/range/range";
 
 if (document.readyState === "loading") {
     console.log('document.readyState === "loading"');

@@ -2,6 +2,7 @@ extends ../layout/regular.pug
 include ../../components/product-card/product-card.pug
 include ../mixins/menuItem.pug
 include ../mixins/oil.pug
+include ../blocks/main/catalog.pug
 
 block page 
     .container
@@ -17,7 +18,7 @@ block page
             .main-head__navbar.navbar
                 include ../blocks/navbar/navbar.pug
         article.main
-            include ../blocks/main/catalog.pug
+            +catalog
             section.general
                 section.banner
                     include ../blocks/main/panel/discount.pug
