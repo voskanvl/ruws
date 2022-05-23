@@ -1,9 +1,15 @@
-var inputLeft = document.getElementById('input-left');
-var inputRight = document.getElementById('input-right');
+var inputLeft = document.getElementById("input-left");
+var inputRight = document.getElementById("input-right");
 
-var thumbLeft = document.querySelector('.slider > .thumb.left');
-var thumbRight = document.querySelector('.slider > .thumb.right');
-var range = document.querySelector('.slider > .range');
+var thumbLeft = document.querySelector(".slider > .thumb.left");
+var monitorLeft = document.querySelector(
+    ".slider > .thumb.left > .thumb__monitor",
+);
+var thumbRight = document.querySelector(".slider > .thumb.right ");
+var monitorRight = document.querySelector(
+    ".slider > .thumb.right > .thumb__monitor",
+);
+var range = document.querySelector(".slider > .range");
 
 function setLeftValue() {
     var _this = inputLeft,
@@ -17,8 +23,9 @@ function setLeftValue() {
 
     var percent = ((_this.value - min) / (max - min)) * 100;
 
-    thumbLeft.style.left = percent + '%';
-    range.style.left = percent + '%';
+    thumbLeft.style.left = percent + "%";
+    range.style.left = percent + "%";
+    monitorLeft.textContent = percent | 0;
 }
 setLeftValue();
 
@@ -34,36 +41,37 @@ function setRightValue() {
 
     var percent = ((_this.value - min) / (max - min)) * 100;
 
-    thumbRight.style.right = 100 - percent + '%';
-    range.style.right = 100 - percent + '%';
+    thumbRight.style.right = 100 - percent + "%";
+    range.style.right = 100 - percent + "%";
+    monitorRight.textContent = percent | 0;
 }
 setRightValue();
 
-inputLeft.addEventListener('input', setLeftValue);
-inputRight.addEventListener('input', setRightValue);
+inputLeft.addEventListener("input", setLeftValue);
+inputRight.addEventListener("input", setRightValue);
 
-inputLeft.addEventListener('mouseover', function () {
-    thumbLeft.classList.add('hover');
+inputLeft.addEventListener("mouseover", function () {
+    thumbLeft.classList.add("hover");
 });
-inputLeft.addEventListener('mouseout', function () {
-    thumbLeft.classList.remove('hover');
+inputLeft.addEventListener("mouseout", function () {
+    thumbLeft.classList.remove("hover");
 });
-inputLeft.addEventListener('mousedown', function () {
-    thumbLeft.classList.add('active');
+inputLeft.addEventListener("mousedown", function () {
+    thumbLeft.classList.add("active");
 });
-inputLeft.addEventListener('mouseup', function () {
-    thumbLeft.classList.remove('active');
+inputLeft.addEventListener("mouseup", function () {
+    thumbLeft.classList.remove("active");
 });
 
-inputRight.addEventListener('mouseover', function () {
-    thumbRight.classList.add('hover');
+inputRight.addEventListener("mouseover", function () {
+    thumbRight.classList.add("hover");
 });
-inputRight.addEventListener('mouseout', function () {
-    thumbRight.classList.remove('hover');
+inputRight.addEventListener("mouseout", function () {
+    thumbRight.classList.remove("hover");
 });
-inputRight.addEventListener('mousedown', function () {
-    thumbRight.classList.add('active');
+inputRight.addEventListener("mousedown", function () {
+    thumbRight.classList.add("active");
 });
-inputRight.addEventListener('mouseup', function () {
-    thumbRight.classList.remove('active');
+inputRight.addEventListener("mouseup", function () {
+    thumbRight.classList.remove("active");
 });
