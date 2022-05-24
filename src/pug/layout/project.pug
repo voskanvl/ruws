@@ -1,0 +1,35 @@
+extends ../layout/regular.pug
+include ../../components/product-card/product-card.pug
+include ../mixins/menuItem.pug
+include ../mixins/oil.pug
+include ../blocks/main/catalog.pug
+
+
+block page 
+    .container
+        header.main-head
+            header.main-head__head.head
+                .head__left
+                    include ../blocks/header/geo.pug
+                    include ../blocks/header/up-menu.pug
+                .main-head__body.big-head
+                    include ../blocks/header/big-head/big-head__left.pug
+                    include ../blocks/header/big-head/big-head__search.pug
+                    include ../blocks/header/big-head/big-head__right.pug
+            .main-head__navbar.navbar
+                include ../blocks/navbar/navbar.pug
+        article.main
+            +catalog()
+                block catalog
+                
+            .category__main
+                block main 
+
+        footer.footer
+            header.footer__header.footer-header
+                include ../blocks/footer/footer-header.pug
+
+            footer.footer__footer.footer-footer
+                include ../blocks/footer/footer-footer.pug
+            footer.developer
+                .developer__wrap Разработано Ruws
