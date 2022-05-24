@@ -1,5 +1,6 @@
 import "../../styles/style.sass";
 import "../../components/range/range";
+import "../bigButtonListener";
 
 if (document.readyState === "loading") {
     console.log('document.readyState === "loading"');
