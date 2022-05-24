@@ -25,6 +25,8 @@ main.product
     &__details
         display: grid
         grid-template-columns: 1fr 1fr
+        margin-bottom: 44px
+        border-top: 1px solid #92817B
     &__image
         display: flex
         align-items: center
@@ -59,6 +61,7 @@ main.product
         +start
         & > .counter
             margin-right: 24px
+            padding: 6px 18px
     &__price
         font-size: 40px
         font-weight: 600
@@ -76,3 +79,29 @@ main.product
         & > a
             color: #92817B
             text-decoration: none
+    &__busket
+        border-radius: 2px
+        color: #fff
+        background: #91BABE
+        border: none
+        width: 116px
+        height: 30px
+    &__tabs
+        position: absolute
+        left: 0
+        right: 0
+        +center
+        background: #3D4144
+    &__tab
+        color: #fff
+        padding: 20px 55px
+        &.active
+            background: #91BABE
+    &__body
+        padding-top: 25px
+        background: #F3F4F6
+        position: absolute
+        left: 0
+        right: 0
+        transform: translateY(58px)
+        height: 309px
