@@ -20,4 +20,14 @@ function start() {
             subMenu.classList.toggle("sub-menu__content_show");
         }
     });
+    //--- INIT CAROUSEL
+    M.Carousel.init(
+        document.querySelector(".product-resume__carousel.carousel"),
+        {
+            indicators: false,
+            numVisible: 3,
+            padding: 7,
+            fullWidth: true,
+        },
+    );
 }

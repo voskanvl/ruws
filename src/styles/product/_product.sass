@@ -1,0 +1,78 @@
+=center
+    display: flex
+    align-items: center
+    justify-content: center
+=sb
+    display: flex
+    align-items: center
+    justify-content: space-between
+=start
+    display: flex
+    align-items: center
+    justify-content: start
+main.product
+    padding-top: 22px
+.product-resume
+    &__wrapper
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: space-between
+    &__stars
+        display: flex
+        align-items: center
+        justify-content: center
+    &__details
+        display: grid
+        grid-template-columns: 1fr 1fr
+    &__image
+        display: flex
+        align-items: center
+        justify-content: center
+    &__carousel
+        // transform: rotate(-90deg)
+        transform-origin: center
+        & > .carousel-item
+            //временно
+            width: 100px
+            height: 100px
+            background: #eee
+            text-align: center
+            & > *
+                transform: rotate(-90deg)
+
+    &__slider
+        width: 200px
+        +center
+        flex-direction: row
+        transform: rotate(90deg)
+
+        & > .slider__control
+            // transform: rotate(90deg)
+    &__upblock
+        +sb
+        margin-bottom: 69px
+    &__upblock-left
+        & > *:not(:last-child)
+            margin-bottom: 1em
+    &__data-controls
+        +start
+        & > .counter
+            margin-right: 24px
+    &__price
+        font-size: 40px
+        font-weight: 600
+
+    &__description
+        font-size: 18px
+        font-weight: 600
+        & > p
+            font-size: 16px
+            font-weight: 200
+    &__title
+        font-size: 25px
+    &__crumbs
+        font-size: 14px
+        & > a
+            color: #92817B
+            text-decoration: none

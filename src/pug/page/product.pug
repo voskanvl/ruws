@@ -1,1 +1,46 @@
 extends ../layout/project.pug
+block main
+    main.product
+        section.product-resume 
+            - const crumbs = ["Главная","Клюзы","Чугунный клюз"," Клюз для лебедки чугун под стальной трос "]
+            .product-resume__crumbs
+                each i,idx in crumbs
+                    if (idx<crumbs.length-1) 
+                        a(href="#")= i+" - "
+                    else 
+                        a(href="#")= i
+            .product-resume__wrapper
+                h1.product-resume__title Клюз для лебедки чугун под стальной трос
+                .product-resume__stars
+                    each i in [0,1,2,3,4]
+                        .product-resume__star *
+            .product-resume__details 
+                .product-resume__image 
+                    .product-resume__img 
+                        p Здесь будет картина
+                    .product-resume__slider
+                        button.slider__control(data-slide="prev")
+                        .product-resume__carousel.carousel 
+                            -const productImgs = ["1","2","3","4","5"]
+                            each i in productImgs
+                                a.carousel-item(href="#")
+                                    p= i
+                        button.slider__control(data-slide="next")
+                .product-resume__data 
+                    .product-resume__upblock
+                        .product-resume__upblock-left
+                            h1.product-resume__price 1 344 &#8381
+                            .product-resume__artikul <strong>Артикул:</strong> PN7608 
+                            .product-resume__vendor_gray <strong>Производитель:</strong> Runva 
+                            .product-resume__presence <strong>Наличие:</strong> Есть в наличии 
+                        .product-resume__brand
+                            p Здесь будет картинка с брендом
+                            h2.product-resume__vendor_strong Runva
+                    .product-resume__downblock
+                        h2.product-resume__description Описание:
+                        p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." 
+                    .product-resume__data-controls 
+                        include ../../components/counter/counter.pug
+                        button.product-resume__busket В корзину
+        section.product-description
+        section.product-recent
