@@ -86,22 +86,43 @@ main.product
         border: none
         width: 116px
         height: 30px
+
+.product-description
     &__tabs
-        position: absolute
+        // position: absolute
         left: 0
         right: 0
-        +center
+        +start
         background: #3D4144
+        // margin-right: -21%
+
     &__tab
         color: #fff
         padding: 20px 55px
         &.active
             background: #91BABE
     &__body
-        padding-top: 25px
+        width: 100%
         background: #F3F4F6
-        position: absolute
+        // position: absolute
         left: 0
         right: 0
-        transform: translateY(58px)
+        // transform: translateY(58px)
         height: 309px
+        margin-right: -21%
+    &__body-container
+        max-width: 1319px
+        margin: 25px calc( 300 / 1920 * 100%) 0
+
+.product-recent
+    // position: absolute
+    top: calc( 58px + 25px + 284px)
+    left: 0
+    right: 0
+    max-width: 1319px
+    margin: 0 auto
+    &__container
+        +center
+    &__title
+        font-size: 30px
+        font-weight: 600

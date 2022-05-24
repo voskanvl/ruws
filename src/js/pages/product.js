@@ -12,14 +12,15 @@ if (document.readyState === "loading") {
 function start() {
     const catalog = document.querySelector(".catalog");
     //--- TOOGLE CATALOG__ITEM ---
-    catalog.addEventListener("click", ({ target }) => {
+    const clickHandler = ({ target }) => {
         const subMenu = target
             .closest(".catalog__item")
             .querySelector(".sub-menu__content");
         if (subMenu) {
             subMenu.classList.toggle("sub-menu__content_show");
         }
-    });
+    };
+    catalog.addEventListener("click", clickHandler);
     //--- INIT CAROUSEL
     M.Carousel.init(
         document.querySelector(".product-resume__carousel.carousel"),
@@ -30,4 +31,7 @@ function start() {
             fullWidth: true,
         },
     );
+    //--- close Catalog
+    // catalog.style.width = "0";
+    // catalog.style.overflow = "hidden";
 }
