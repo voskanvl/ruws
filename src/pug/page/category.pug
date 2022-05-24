@@ -1,76 +1,50 @@
-extends ../layout/regular.pug
-include ../../components/product-card/product-card.pug
-include ../mixins/menuItem.pug
-include ../mixins/oil.pug
-include ../blocks/main/catalog.pug
+extends ../layout/project.pug
 include ../blocks/options/options.pug
 
-block page 
-    .container
-        header.main-head
-            header.main-head__head.head
-                .head__left
-                    include ../blocks/header/geo.pug
-                    include ../blocks/header/up-menu.pug
-                .main-head__body.big-head
-                    include ../blocks/header/big-head/big-head__left.pug
-                    include ../blocks/header/big-head/big-head__search.pug
-                    include ../blocks/header/big-head/big-head__right.pug
-            .main-head__navbar.navbar
-                include ../blocks/navbar/navbar.pug
-        article.main
-            +catalog()
-                - const vendors = ["Abadal","Abarth","Abbott-Detroit","ABT","AC Cars","Acura"]
-                +options(vendors)
+block catalog
+    - const vendors = ["Abadal","Abarth","Abbott-Detroit","ABT","AC Cars","Acura"]
+    +options(vendors)
                 
-            .category__main
-                form.category__form
-                    span Сортировать по:
-                    select(name="sort")
-                        option(value="0", selected=true) Цене (значок вверх) 
-                        option(value="1") Цене! (значок вниз)
-                        option(value="2") Наличию (значок верх)
-                        option(value="3") Наличию (значок вниз)
-                    span На старнице
-                    select(name="inpage")
-                        option(value="0") 9 
-                        option(value="1") 12
-                    span Вид
-                    svg(width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg")
-                        rect(width="7" height="7" rx="1" fill="#FAAC3D")
-                        rect(y="8" width="7" height="7" rx="1" fill="#FAAC3D")
-                        rect(y="16" width="7" height="7" rx="1" fill="#FAAC3D")
-                        rect(x="8" width="7" height="7" rx="1" fill="#FAAC3D")
-                        rect(x="8" y="8" width="7" height="7" rx="1" fill="#FAAC3D")
-                        rect(x="8" y="16" width="7" height="7" rx="1" fill="#FAAC3D")
-                        rect(x="16" width="7" height="7" rx="1" fill="#FAAC3D")
-                        rect(x="16" y="8" width="7" height="7" rx="1" fill="#FAAC3D")
-                        rect(x="16" y="16" width="7" height="7" rx="1" fill="#FAAC3D")
-                    svg(width="31" height="23" viewBox="0 0 31 23" fill="none" xmlns="http://www.w3.org/2000/svg")
-                        rect(width="7" height="7" rx="1" fill="#E5ECF3")
-                        rect(x="8" width="23" height="7" rx="1" fill="#E5ECF3")
-                        rect(y="8" width="7" height="7" rx="1" fill="#E5ECF3")
-                        rect(x="8" y="8" width="23" height="7" rx="1" fill="#E5ECF3")
-                        rect(y="16" width="7" height="7" rx="1" fill="#E5ECF3")
-                        rect(x="8" y="16" width="23" height="7" rx="1" fill="#E5ECF3")
-                - 
-                    const arr = [
-                        {img:"../../assets/top-products/Rectangle 46.png",price:"10 140",name:"Домкрат реечный Hi-lift 120см (чугун)",presence:"true"},
-                        {img:"../../assets/top-products/Rectangle 47.png",price:"9 250",name:"Домкрат реечный Hi-lift 100см (сталь)",presence:"false"},
-                        {img:"../../assets/top-products/Rectangle 48.png",price:"10 360",name:"Домкрат Low-down 120см (чугун)",presence:"true"},
-                        {img:"../../assets/top-products/Rectangle 46.png",price:"12 470",name:"Домкрат Low-down 125см (сталь)",presence:"true"},
-                        {img:"../../assets/top-products/Rectangle 47.png",price:"11 580",name:"Домкрат D 140см (сталь)",presence:"false"},
-                        {img:"../../assets/top-products/Rectangle 48.png",price:"10 690",name:"Домкрат S 150см (сталь)",presence:"true"}
-                        ]
-                .category__items
-                    each i in arr
-                        +productCard(i.img,i.price,i.name, i.presence)
-                .category__pagination Показано с 1 по 9 из 12 (страниц: 1)
-        footer.footer
-            header.footer__header.footer-header
-                include ../blocks/footer/footer-header.pug
-
-            footer.footer__footer.footer-footer
-                include ../blocks/footer/footer-footer.pug
-            footer.developer
-                .developer__wrap Разработано Ruws
+block main
+    form.category__form
+        span Сортировать по:
+        select(name="sort")
+            option(value="0", selected=true) Цене (значок вверх) 
+            option(value="1") Цене! (значок вниз)
+            option(value="2") Наличию (значок верх)
+            option(value="3") Наличию (значок вниз)
+        span На старнице
+        select(name="inpage")
+            option(value="0") 9 
+            option(value="1") 12
+        span Вид
+        svg(width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg")
+            rect(width="7" height="7" rx="1" fill="#FAAC3D")
+            rect(y="8" width="7" height="7" rx="1" fill="#FAAC3D")
+            rect(y="16" width="7" height="7" rx="1" fill="#FAAC3D")
+            rect(x="8" width="7" height="7" rx="1" fill="#FAAC3D")
+            rect(x="8" y="8" width="7" height="7" rx="1" fill="#FAAC3D")
+            rect(x="8" y="16" width="7" height="7" rx="1" fill="#FAAC3D")
+            rect(x="16" width="7" height="7" rx="1" fill="#FAAC3D")
+            rect(x="16" y="8" width="7" height="7" rx="1" fill="#FAAC3D")
+            rect(x="16" y="16" width="7" height="7" rx="1" fill="#FAAC3D")
+        svg(width="31" height="23" viewBox="0 0 31 23" fill="none" xmlns="http://www.w3.org/2000/svg")
+            rect(width="7" height="7" rx="1" fill="#E5ECF3")
+            rect(x="8" width="23" height="7" rx="1" fill="#E5ECF3")
+            rect(y="8" width="7" height="7" rx="1" fill="#E5ECF3")
+            rect(x="8" y="8" width="23" height="7" rx="1" fill="#E5ECF3")
+            rect(y="16" width="7" height="7" rx="1" fill="#E5ECF3")
+            rect(x="8" y="16" width="23" height="7" rx="1" fill="#E5ECF3")
+    - 
+        const arr = [
+            {img:"../../assets/top-products/Rectangle 46.png",price:"10 140",name:"Домкрат реечный Hi-lift 120см (чугун)",presence:"true"},
+            {img:"../../assets/top-products/Rectangle 47.png",price:"9 250",name:"Домкрат реечный Hi-lift 100см (сталь)",presence:"false"},
+            {img:"../../assets/top-products/Rectangle 48.png",price:"10 360",name:"Домкрат Low-down 120см (чугун)",presence:"true"},
+            {img:"../../assets/top-products/Rectangle 46.png",price:"12 470",name:"Домкрат Low-down 125см (сталь)",presence:"true"},
+            {img:"../../assets/top-products/Rectangle 47.png",price:"11 580",name:"Домкрат D 140см (сталь)",presence:"false"},
+            {img:"../../assets/top-products/Rectangle 48.png",price:"10 690",name:"Домкрат S 150см (сталь)",presence:"true"}
+            ]
+    .category__items
+        each i in arr
+            +productCard(i.img,i.price,i.name, i.presence)
+    .category__pagination Показано с 1 по 9 из 12 (страниц: 1)
