@@ -24,7 +24,7 @@ main.product
         justify-content: center
     &__details
         display: grid
-        grid-template-columns: 1fr 1fr
+        grid-template-columns: repeat(2,1fr)
         margin-bottom: 44px
         border-top: 1px solid #92817B
     &__image
@@ -44,12 +44,12 @@ main.product
                 transform: rotate(-90deg)
 
     &__slider
-        width: 200px
-        +center
-        flex-direction: row
-        transform: rotate(90deg)
+        // width: 200px
+        // +center
+        // flex-direction: row
+        // transform: rotate(90deg)
 
-        & > .slider__control
+        // & > .slider__control
             // transform: rotate(90deg)
     &__upblock
         +sb
@@ -95,6 +95,9 @@ main.product
         +start
         background: #3D4144
         // margin-right: -21%
+        padding-left: calc( 300 / 1920 * 100%)
+        @media screen and ( max-width: 1024px )
+            padding-left: 1em
 
     &__tab
         color: #fff
@@ -110,9 +113,16 @@ main.product
         // transform: translateY(58px)
         height: 309px
         margin-right: -21%
+        overflow-y: scroll
     &__body-container
+        display: none
         max-width: 1319px
-        margin: 25px calc( 300 / 1920 * 100%) 0
+        margin: 0px calc( 300 / 1920 * 100%) 0
+        padding-top: 25px
+        &.active
+            display: block
+        @media screen and ( max-width: 1024px )
+            margin: 0px 1em 0
 
 .product-recent
     // position: absolute
@@ -123,6 +133,10 @@ main.product
     margin: 0 auto
     &__container
         +center
+        overflow: scroll
     &__title
         font-size: 30px
         font-weight: 600
+
+#main-slider-track
+    width: 400px
