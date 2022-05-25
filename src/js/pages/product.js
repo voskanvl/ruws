@@ -33,7 +33,17 @@ function start() {
     //         fullWidth: true,
     //     },
     // );
-    new Splide(".splide", {
+    var main = new Splide("#main-slider", {
+        type: "fade",
+        heightRatio: 0.5,
+        pagination: false,
+        arrows: false,
+        cover: true,
+    });
+
+    var thumbnails = new Splide("#thumbnail-slider", {
+        direction: "ttb",
+        height: 400,
         rewind: true,
         fixedWidth: 104,
         fixedHeight: 58,
@@ -52,6 +62,11 @@ function start() {
                 fixedHeight: 38,
             },
         },
-    }).mount();
+    });
+
+    main.sync(thumbnails);
+    main.mount();
+    thumbnails.mount();
+    window.splide = { main, thumbnails };
     //--- INIT Tabs
 }

@@ -18,18 +18,19 @@ block main
                             path(d="M10 0L12.2451 6.90983H19.5106L13.6327 11.1803L15.8779 18.0902L10 13.8197L4.12215 18.0902L6.36729 11.1803L0.489435 6.90983H7.75486L10 0Z" fill="#FAAC3D")
             .product-resume__details 
                 .product-resume__image 
-                    .product-resume__img 
-                        p Здесь будет картина
-                    .product-resume__slider
-                        button.slider__control(data-slide="prev")
-                        .splide 
+                    -const productImgs = ["1","2","3","4","5","6","7"]
+                    .product-resume__img.splide#main-slider  
                             .splide__track
                                 ul.splide__list
-                                    -const productImgs = ["1","2","3","4","5","6","7"]
                                     each i in productImgs
-                                        a.splide__slide(href="#")
+                                        li.splide__slide
                                             img(src=`https://picsum.photos/id/23${i}/200/300`)
-                        button.slider__control(data-slide="next")
+                    .product-resume__slider.splide#thumbnail-slider 
+                            .splide__track
+                                ul.splide__list
+                                    each i in productImgs
+                                        li.splide__slide
+                                            img(src=`https://picsum.photos/id/23${i}/200/300`)
                 .product-resume__data 
                     .product-resume__upblock
                         .product-resume__upblock-left
