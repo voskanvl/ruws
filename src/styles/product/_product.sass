@@ -33,10 +33,10 @@ main.product
         justify-content: center
         margin-right: calc( 88 / 1920 * 100%)
         & button.splide__arrow--prev
-            transform: translate(-50%,-200%)
+            transform: translate(-50%,-150%)
             background: none
         & button.splide__arrow--next
-            transform: translate(-50%,200%)
+            transform: translate(-50%,150%)
             background: none
 
     &__img
@@ -112,6 +112,7 @@ main.product
     &__tab
         color: #fff
         padding: 20px 55px
+        cursor: pointer
         &.active
             background: #91BABE
     &__body
@@ -123,7 +124,7 @@ main.product
         // transform: translateY(58px)
         height: 309px
         margin-right: -21%
-        overflow-y: scroll
+        overflow-y: auto
     &__body-container
         display: none
         max-width: 1319px
