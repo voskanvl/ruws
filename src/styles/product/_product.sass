@@ -31,6 +31,16 @@ main.product
         display: flex
         align-items: center
         justify-content: center
+        margin-right: calc( 88 / 1920 * 100%)
+        & button.splide__arrow--prev
+            transform: translate(-50%,-200%)
+            background: none
+        & button.splide__arrow--next
+            transform: translate(-50%,200%)
+            background: none
+
+    &__img
+        margin-right: 20px
     &__carousel
         // transform: rotate(-90deg)
         transform-origin: center

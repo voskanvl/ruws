@@ -39,14 +39,16 @@ function start() {
         pagination: false,
         arrows: false,
         cover: true,
+        width: 400,
+        height: 400,
     });
 
     var thumbnails = new Splide("#thumbnail-slider", {
         direction: "ttb",
+        perPage: 3,
         height: 400,
         rewind: true,
-        fixedWidth: 104,
-        fixedHeight: 58,
+        fixedWidth: 135,
         isNavigation: true,
         gap: 10,
         focus: "center",
