@@ -32,6 +32,7 @@ module.exports = {
         index: `${paths.src}/js/pages/index.js`,
         category: `${paths.src}/js/pages/category.js`,
         product: `${paths.src}/js/pages/product.js`,
+        basket: `${paths.src}/js/pages/basket.js`,
         // production: `${paths.src}/js/pages/production.js`,
         // projects: `${paths.src}/js/pages/projects.js`,
     },
