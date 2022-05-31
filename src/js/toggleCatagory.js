@@ -1,6 +1,6 @@
 const STEP = 4;
 const MAX = 252;
-const WIDTH_LEFT_FIELD = 81;
+const WIDTH_LEFT_FIELD = "auto";
 const gridLeftHide = mainElement => cb => {
     const gtc = getComputedStyle(mainElement).gridTemplateColumns;
 
@@ -21,7 +21,7 @@ const gridLeftShow = mainElement => cb => {
     let gtcValue = 0;
 
     const interval = setInterval(() => {
-        mainElement.style.gridTemplateColumns = `${gtcValue}px ${WIDTH_LEFT_FIELD}%`;
+        mainElement.style.gridTemplateColumns = `${gtcValue}px ${WIDTH_LEFT_FIELD}`;
         if (gtcValue >= MAX) {
             cb();
             clearInterval(interval);
