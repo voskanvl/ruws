@@ -8,6 +8,9 @@
         margin-left: 22px
     &__data
         display: flex
+        @media screen and ( max-width: 768px )
+            flex-direction: column
+
 .product-item
     display: grid
     grid-template-columns: 1fr 2fr 6fr 119px 1fr
@@ -15,10 +18,13 @@
     padding: 36px 0
     border-bottom: 1px solid #E5ECF3
     &__title, &__price
-        font-size: 16px
+        font-size: clamp(14px,1.5vw,16px)
         font-weight: 600
+        @media screen and ( max-width: 768px )
+            font-size: 16px
     &__title
         justify-self: start
+        margin-left: 5px
     &__close
         border: none
         background: none
@@ -42,18 +48,30 @@
         display: flex
         justify-content: space-between
         margin-bottom: 10px
+        font-size: clamp(11px,1.5vw,16px)
+        @media screen and ( max-width: 768px )
+            font-size: 16px
     &__left
         color: #92817B
     &__total > &__left, &__total > &__right
-        font-size: 18px
+        font-size: clamp(12px,1.7vw,18px)
         font-weight: 600
         color: #000
+        @media screen and ( max-width: 768px )
+            font-size: 18px
+    @media screen and ( max-width: 768px )
+        margin-left: 0
 
 .delivery-details
     &__block
         display: flex
+        font-size: clamp(11px, 1.5vw,16px)
+        @media screen and ( max-width: 768px )
+            font-size: 16px
     &__value
         color: #92817B
-        font-size: 12px
+        font-size: clamp(9px, 1.2vw,12px)
+        @media screen and ( max-width: 768px )
+            font-size: 12px
     &__wrap
         margin: 0 0 15px 10px
