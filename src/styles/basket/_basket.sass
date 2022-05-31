@@ -1,0 +1,59 @@
+.card
+    font-family: Roboto, sans-serif
+    &__caption
+        font-size: 25px
+    &__volume
+        font-size: 16px
+        color: #92817B
+        margin-left: 22px
+    &__data
+        display: flex
+.product-item
+    display: grid
+    grid-template-columns: 1fr 2fr 6fr 119px 1fr
+    place-items: center
+    padding: 36px 0
+    border-bottom: 1px solid #E5ECF3
+    &__title, &__price
+        font-size: 16px
+        font-weight: 600
+    &__title
+        justify-self: start
+    &__close
+        border: none
+        background: none
+        cursor: pointer
+    &__img
+        width: 92px
+        height: 92px
+        & > img
+            width: 100%
+    &__counter
+        & > .counter
+            padding: 6px 10px
+            & > *:not(:last-child)
+                margin-right: 16px
+.info-panel
+    border-radius: 5px
+    border: 1px solid #E5ECF3
+    margin-left: 20px
+    padding: 30px
+    &__row
+        display: flex
+        justify-content: space-between
+        margin-bottom: 10px
+    &__left
+        color: #92817B
+    &__total > &__left, &__total > &__right
+        font-size: 18px
+        font-weight: 600
+        color: #000
+
+.delivery-details
+    &__block
+        display: flex
+    &__value
+        color: #92817B
+        font-size: 12px
+    &__wrap
+        margin: 0 0 15px 10px
