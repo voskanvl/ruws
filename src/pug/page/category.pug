@@ -7,34 +7,36 @@ block catalog
                 
 block main
     form.category__form
-        span Сортировать по:
-        select(name="sort")
-            option(value="0", selected=true) Цене (значок вверх) 
-            option(value="1") Цене! (значок вниз)
-            option(value="2") Наличию (значок верх)
-            option(value="3") Наличию (значок вниз)
-        span На старнице
-        select(name="inpage")
-            option(value="0") 9 
-            option(value="1") 12
-        span Вид
-        svg(width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg")
-            rect(width="7" height="7" rx="1" fill="#FAAC3D")
-            rect(y="8" width="7" height="7" rx="1" fill="#FAAC3D")
-            rect(y="16" width="7" height="7" rx="1" fill="#FAAC3D")
-            rect(x="8" width="7" height="7" rx="1" fill="#FAAC3D")
-            rect(x="8" y="8" width="7" height="7" rx="1" fill="#FAAC3D")
-            rect(x="8" y="16" width="7" height="7" rx="1" fill="#FAAC3D")
-            rect(x="16" width="7" height="7" rx="1" fill="#FAAC3D")
-            rect(x="16" y="8" width="7" height="7" rx="1" fill="#FAAC3D")
-            rect(x="16" y="16" width="7" height="7" rx="1" fill="#FAAC3D")
-        svg(width="31" height="23" viewBox="0 0 31 23" fill="none" xmlns="http://www.w3.org/2000/svg")
-            rect(width="7" height="7" rx="1" fill="#E5ECF3")
-            rect(x="8" width="23" height="7" rx="1" fill="#E5ECF3")
-            rect(y="8" width="7" height="7" rx="1" fill="#E5ECF3")
-            rect(x="8" y="8" width="23" height="7" rx="1" fill="#E5ECF3")
-            rect(y="16" width="7" height="7" rx="1" fill="#E5ECF3")
-            rect(x="8" y="16" width="23" height="7" rx="1" fill="#E5ECF3")
+        .category__form-left
+            span Сортировать по:
+            select(name="sort")
+                option(value="0", selected=true) Цене (значок вверх) 
+                option(value="1") Цене! (значок вниз)
+                option(value="2") Наличию (значок верх)
+                option(value="3") Наличию (значок вниз)
+        .category__form-right
+            span На старнице
+            select(name="inpage")
+                option(value="0") 9 
+                option(value="1") 12
+            span Вид
+            svg(width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg")
+                rect(width="7" height="7" rx="1" fill="#FAAC3D")
+                rect(y="8" width="7" height="7" rx="1" fill="#FAAC3D")
+                rect(y="16" width="7" height="7" rx="1" fill="#FAAC3D")
+                rect(x="8" width="7" height="7" rx="1" fill="#FAAC3D")
+                rect(x="8" y="8" width="7" height="7" rx="1" fill="#FAAC3D")
+                rect(x="8" y="16" width="7" height="7" rx="1" fill="#FAAC3D")
+                rect(x="16" width="7" height="7" rx="1" fill="#FAAC3D")
+                rect(x="16" y="8" width="7" height="7" rx="1" fill="#FAAC3D")
+                rect(x="16" y="16" width="7" height="7" rx="1" fill="#FAAC3D")
+            svg(width="31" height="23" viewBox="0 0 31 23" fill="none" xmlns="http://www.w3.org/2000/svg")
+                rect(width="7" height="7" rx="1" fill="#E5ECF3")
+                rect(x="8" width="23" height="7" rx="1" fill="#E5ECF3")
+                rect(y="8" width="7" height="7" rx="1" fill="#E5ECF3")
+                rect(x="8" y="8" width="23" height="7" rx="1" fill="#E5ECF3")
+                rect(y="16" width="7" height="7" rx="1" fill="#E5ECF3")
+                rect(x="8" y="16" width="23" height="7" rx="1" fill="#E5ECF3")
     - 
         const arr = [
             {img:"../../assets/top-products/Rectangle 46.png",price:"10 140",name:"Домкрат реечный Hi-lift 120см (чугун)",presence:"true"},
