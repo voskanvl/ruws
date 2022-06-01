@@ -2,6 +2,8 @@ const STEP = 4;
 const MAX = 252;
 const WIDTH_LEFT_FIELD = "auto";
 const gridLeftHide = mainElement => cb => {
+    const match = matchMedia("(max-width: 425px)").matches;
+    if (match) return;
     const gtc = getComputedStyle(mainElement).gridTemplateColumns;
 
     let gtcSplited = gtc.split(" ");
@@ -18,6 +20,8 @@ const gridLeftHide = mainElement => cb => {
 };
 // --- show catalog ---
 const gridLeftShow = mainElement => cb => {
+    const match = matchMedia("(max-width: 425px)").matches;
+    if (match) return;
     let gtcValue = 0;
 
     const interval = setInterval(() => {

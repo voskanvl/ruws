@@ -55,7 +55,7 @@
         display: none
 
     .main
-        grid-template-columns: 0px auto
+        grid-template-columns: 0px 1fr
     .big-head
         grid-template-areas: "leftEl rightEl" "searchEl searchEl"
         grid-template-columns: 1fr 1fr
@@ -77,6 +77,7 @@
             padding-bottom: 2rem
         &__form
             width: 100%
+            padding: 0 1em
         &__input
             flex: 1 1
         &__submit
@@ -95,5 +96,9 @@
             font-size: 21px
         &__leftwrap
             justify-content: center
+            margin-bottom: 1em
         &__title
             text-align: center
+            font-size: 14px
+    .category__main .category__form
+        font-size: 14px
