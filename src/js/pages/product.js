@@ -39,7 +39,7 @@ function start() {
         pagination: false,
         arrows: false,
         cover: true,
-        width: 400,
+        // width: 400,
         height: 400,
     });
 
@@ -70,5 +70,6 @@ function start() {
     main.mount();
     thumbnails.mount();
     window.splide = { main, thumbnails };
-    //--- INIT Tabs
+    //--- CLICK BigBUTTON
+    document.querySelector(".big-button").click();
 }

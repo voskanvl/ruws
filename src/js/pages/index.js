@@ -1,7 +1,7 @@
 import "../../styles/style.sass";
 import "../bigButtonListener";
 
-const bigButtonPic = document.querySelector(".big-button__pic");
+const bigButton = document.querySelector(".big-button");
 
 //--- MODAL ---
 const burgerButton = document.querySelector(".burger__pic");
@@ -86,5 +86,7 @@ function start() {
                 subMenu.classList.toggle("sub-menu__content_show");
             }
         });
+        //--- CLICK BigBUTTON
+        document.querySelector(".big-button").click();
     }, 0);
 }

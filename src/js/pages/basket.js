@@ -19,4 +19,6 @@ function start() {
         }
     };
     catalog.addEventListener("click", clickHandler);
+    //--- CLICK BigBUTTON
+    document.querySelector(".big-button").click();
 }

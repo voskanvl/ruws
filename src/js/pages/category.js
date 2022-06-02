@@ -20,4 +20,6 @@ function start() {
             subMenu.classList.toggle("sub-menu__content_show");
         }
     });
+    //--- CLICK BigBUTTON
+    document.querySelector(".big-button").click();
 }
