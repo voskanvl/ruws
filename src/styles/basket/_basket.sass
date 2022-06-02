@@ -10,7 +10,8 @@
         display: flex
         @media screen and ( max-width: 768px )
             flex-direction: column
-
+    &__list-products
+        flex: 1
 .product-item
     display: grid
     grid-template-columns: 1fr 2fr 6fr 119px 1fr
@@ -59,6 +60,15 @@
         color: #000
         @media screen and ( max-width: 768px )
             font-size: 18px
+    &__checkout
+        border: none
+        background: #91BABE
+        border-radius: 2px
+        padding: 5px 28px
+        margin: 0 auto
+        cursor: pointer
+        margin-top: 43px
+
     @media screen and ( max-width: 768px )
         margin-left: 0
 
