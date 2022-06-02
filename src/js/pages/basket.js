@@ -27,6 +27,17 @@ function start() {
     //--- CLICK BigBUTTON
     document.querySelector(".big-button").click();
     //--- OPEN MODAL
-    checkout.addEventListener("click", () => (modal.style.display = "block"));
+    checkout.addEventListener("click", () => (modal.style.display = "flex"));
     close.addEventListener("click", () => (modal.style.display = "none"));
+    //--- controls modal handler
+    const controls = document.querySelectorAll(
+        ".checkout-panel__controls > button",
+    );
+    console.log("🚀 ~ controls", controls);
+    controls.forEach(control =>
+        control.addEventListener(
+            "click",
+            () => (window.location.href = "/checkout.html"),
+        ),
+    );
 }
