@@ -75,6 +75,8 @@ main.product
     &__upblock-left
         & > *:not(:last-child)
             margin-bottom: 1em
+            @media screen and ( max-width: 550px )
+                text-align: center
     &__data-controls
         +start
         & > .counter
@@ -109,6 +111,12 @@ main.product
         border: none
         width: 116px
         height: 30px
+
+    &__vendor
+        &_strong
+    &__brand
+        @media screen and ( max-width: 550px )
+            text-align: center
 
 .product-description
     &__tabs
