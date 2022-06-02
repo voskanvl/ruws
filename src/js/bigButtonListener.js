@@ -8,6 +8,7 @@ bigButton.addEventListener("click", () => {
     // const match = matchMedia("(max-width: 425px)").matches;
     if (opacity != 0) {
         catalog.style.opacity = "0";
+        catalog.style.zIndex = "-1";
         // if (!match)
         ToogleCategory(mainElement).hide(() => {
             setTimeout(() => {}, 0);
@@ -16,7 +17,9 @@ bigButton.addEventListener("click", () => {
         // if (!match)
         ToogleCategory(mainElement).show(() => {
             catalog.style.opacity = "1";
+            catalog.style.zIndex = "9";
         });
         catalog.style.opacity = "1";
+        catalog.style.zIndex = "9";
     }
 });
