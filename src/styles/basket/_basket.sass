@@ -71,6 +71,10 @@
 
     @media screen and ( max-width: 768px )
         margin-left: 0
+    & .modal
+        display: flex
+        flex-direction: column
+        justify-content: center
 
 .delivery-details
     &__block
@@ -85,3 +89,30 @@
             font-size: 12px
     &__wrap
         margin: 0 0 15px 10px
+
+.checkout-panel
+    background: #fff
+    border-radius: 7px
+    padding: 31px 44px
+    max-width: 731px
+    &__title
+        font-size: 22px
+        max-width: 362px
+        margin-bottom: 61px
+        margin: 0 auto
+    &__controls
+        display: flex
+        align-items: center
+        & > button
+            padding: 11px 0
+            border: none
+            border-radius: 5px
+            width: 247px
+        & > span
+            margin: 0 34px
+        & > button.checkout-panel__login
+            background: #91babe
+            color: #fff
+        & > button.checkout-panel__nonelogin
+            background: #F0F1F4
+            color: #000

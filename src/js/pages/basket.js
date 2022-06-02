@@ -10,6 +10,10 @@ if (document.readyState === "loading") {
 }
 function start() {
     const catalog = document.querySelector(".catalog");
+    const checkout = document.querySelector(".info-panel__checkout");
+    const modal = document.querySelector(".info-panel .modal");
+    const close = document.querySelector(".info-panel .modal__close");
+
     //--- TOOGLE CATALOG__ITEM ---
     const clickHandler = ({ target }) => {
         const subMenu = target
@@ -22,4 +26,7 @@ function start() {
     catalog.addEventListener("click", clickHandler);
     //--- CLICK BigBUTTON
     document.querySelector(".big-button").click();
+    //--- OPEN MODAL
+    checkout.addEventListener("click", () => (modal.style.display = "block"));
+    close.addEventListener("click", () => (modal.style.display = "none"));
 }
