@@ -98,6 +98,8 @@ button[disable="true"]
 .category
     &__main
         margin-right: 1em
+        @media screen and ( max-width: 425px )
+            grid-column: 2
     &__items
         display: grid
         grid-template-columns: repeat(3,1fr)

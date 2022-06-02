@@ -12,6 +12,7 @@
     justify-content: start
 main.product
     padding-top: 22px
+    margin-left: 1em
 .product-resume
     &__wrapper
         width: 100%
@@ -27,6 +28,8 @@ main.product
         grid-template-columns: repeat(2,1fr)
         margin-bottom: 44px
         border-top: 1px solid #92817B
+        @media screen and ( max-width: 1024px )
+            grid-template-columns: 1fr
     &__image
         display: flex
         align-items: center
@@ -41,6 +44,10 @@ main.product
 
     &__img
         margin-right: 20px
+        @media screen and ( max-width: 550px )
+            width: 200px
+            margin: 0 auto
+
     &__carousel
         // transform: rotate(-90deg)
         transform-origin: center
@@ -108,11 +115,14 @@ main.product
         padding-left: calc( 300 / 1920 * 100%)
         @media screen and ( max-width: 1024px )
             padding-left: 1em
+        @media screen and ( max-width: 425px )
+            padding-left: 0em
 
     &__tab
         color: #fff
-        padding: 20px 55px
+        padding: 20px clamp(9px,2vw,55px)
         cursor: pointer
+        font-size: clamp(12px,2vw,16px)
         &.active
             background: #91BABE
     &__body
@@ -125,6 +135,7 @@ main.product
         height: 309px
         margin-right: -21%
         overflow-y: auto
+        font-size: clamp(12px,2vw,16px)
     &__body-container
         display: none
         max-width: 1319px
@@ -151,3 +162,5 @@ main.product
 
 #main-slider-track
     width: 400px
+    @media screen and ( max-width: 768px )
+        width: 200px
