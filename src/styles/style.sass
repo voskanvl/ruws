@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic)
 @import "./_consts"
 @import "./header/_lk"
 @import "./header/_basket"
@@ -35,6 +36,7 @@
 @import "./_splidejs"
 @import "./basket/_basket"
 @import "./_category"
+@import "./checkout/_checkout"
 
 =fc
     display: flex
@@ -53,7 +55,7 @@
     box-sizing: border-box
 
 body
-    font-family: Roboto, sans-serif
+    font-family: 'Roboto', sans-serif
     padding: 0
     margin: 0
     overflow-x: hidden
@@ -153,3 +155,8 @@ article.main
             background: $color
         &:checked::after
             opacity: 1
+.crumbs
+    font-size: clamp(11px,2vw,14px)
+    & > a
+        color: #92817B
+        text-decoration: none
