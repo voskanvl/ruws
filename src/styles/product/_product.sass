@@ -30,6 +30,7 @@ main.product
         border-top: 1px solid #92817B
         @media screen and ( max-width: 1024px )
             grid-template-columns: 1fr
+            padding-top: 26px
     &__image
         display: flex
         align-items: center
@@ -61,13 +62,7 @@ main.product
                 transform: rotate(-90deg)
 
     &__slider
-        // width: 200px
-        // +center
-        // flex-direction: row
-        // transform: rotate(90deg)
 
-        // & > .slider__control
-            // transform: rotate(90deg)
     &__upblock
         +sb
         margin-bottom: 69px
@@ -82,6 +77,8 @@ main.product
     &__price
         font-size: 40px
         font-weight: 600
+        @media screen and ( max-width: 1024px )
+            font-size: 36px
 
     &__description
         font-size: 18px

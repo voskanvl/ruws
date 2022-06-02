@@ -5,7 +5,7 @@ const catalog = document.querySelector("ul.catalog");
 const bigButton = document.querySelector(".big-button");
 bigButton.addEventListener("click", () => {
     const opacity = getComputedStyle(catalog).opacity;
-    const match = matchMedia("(max-width: 425px)").matches;
+    // const match = matchMedia("(max-width: 425px)").matches;
     if (opacity != 0) {
         catalog.style.opacity = "0";
         // if (!match)
