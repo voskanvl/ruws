@@ -8,4 +8,7 @@ if (document.readyState === "loading") {
     console.log('document.readyState !== "loading"');
     start();
 }
-function start() {}
+function start() {
+    //--- CLICK BigBUTTON
+    document.querySelector(".big-button").click();
+}

@@ -3,7 +3,7 @@ block main
     main.product
         section.product-resume 
             - const crumbs = ["Главная","Клюзы","Чугунный клюз"," Клюз для лебедки чугун под стальной трос "]
-            .product-resume__crumbs
+            .crumbs.product-resume__crumbs
                 each i,idx in crumbs
                     if (idx<crumbs.length-1) 
                         a(href="#")= i+" - "

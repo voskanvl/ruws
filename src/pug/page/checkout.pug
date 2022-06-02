@@ -1,3 +1,61 @@
 extends ../layout/project.pug
 block main
-    p Hello
+    main.checkout
+        - const crumbs = ["Главная","Корзина","Оформление заказа"]
+        section.crumbs.checkout__breadcrumbs
+            each i,idx in crumbs
+                    if (idx<crumbs.length-1) 
+                        a(href="#")= i+" - "
+                    else 
+                        a(href="#")= i
+        section.checkout__checkout
+            h1.checkout__title Оформление заказа
+            .checkout__row 
+                .checkout__panel.checkout__contacts.contacts
+                    .contacts__title Контактная информация
+                    .checkout__row 
+                        .checkbox
+                            input(type="checkbox" checked)
+                            label.checkbox__label Физическое лицо
+                        .checkbox
+                            input(type="checkbox")
+                            label.checkbox__label Юридическое лицо
+
+                
+                .checkout__panel.checkout__overall.card__info-panel.info-panel 
+                    .info-panel__row.info-panel__overall
+                        span.info-panel__left 3 товара
+                        span.info-panel__right 1 504&#8381;
+                    .info-panel__row.info-panel__discount 
+                        span.info-panel__left Скидка
+                        span.info-panel__right 04&#8381;
+                    .info-panel__row.info-panel__delivery 
+                        span.info-panel__left Доставка
+                        span.info-panel__right Бесплатно
+                    .info-panel__row.info-panel__total 
+                        span.info-panel__left Итого
+                        span.info-panel__right 1 504&#8381;
+                    .info-panel__row.info-panel__total
+                        span.info-panel__left Доставка
+                    .info-panel__delivery-details.delivery-details
+                        .delivery-details__block 
+                            svg(width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                path(d="M16.625 7.91669C16.625 13.4584 9.5 18.2084 9.5 18.2084C9.5 18.2084 2.375 13.4584 2.375 7.91669C2.375 6.02702 3.12567 4.21475 4.46186 2.87855C5.79806 1.54235 7.61033 0.791687 9.5 0.791687C11.3897 0.791687 13.2019 1.54235 14.5381 2.87855C15.8743 4.21475 16.625 6.02702 16.625 7.91669Z" stroke="#91BABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
+                                path(d="M9.5 10.2917C10.8117 10.2917 11.875 9.22836 11.875 7.91669C11.875 6.60501 10.8117 5.54169 9.5 5.54169C8.18832 5.54169 7.125 6.60501 7.125 7.91669C7.125 9.22836 8.18832 10.2917 9.5 10.2917Z" stroke="#91BABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
+                            .delivery-details__wrap
+                                .delivery-details__title Самовывоз из магазина
+                                .delivery-details__value Бесплатно
+                        .delivery-details__block
+                            svg(width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                g(clip-path="url(#clip0_37_789)")
+                                    path(d="M27.8617 14.0216L24.6137 10.3137C24.5078 10.1928 24.3549 10.1235 24.1942 10.1235H21.4896V7.83358C21.4896 7.52552 21.2398 7.27582 20.9318 7.27582H9.41205C9.10405 7.27582 8.8543 7.52552 8.8543 7.83358V8.58618H3.48989C3.18189 8.58618 2.93213 8.83589 2.93213 9.14394C2.93213 9.452 3.18189 9.7017 3.48989 9.7017H8.8543V16.9319H5.62522C5.31722 16.9319 5.06746 17.1816 5.06746 17.4897C5.06746 17.7977 5.31722 18.0475 5.62522 18.0475H8.8543V18.6143C8.8543 18.9223 9.10405 19.172 9.41205 19.172H10.5762C10.8215 20.0656 11.6404 20.7242 12.6108 20.7242C13.5812 20.7242 14.4001 20.0656 14.6454 19.172H22.0878V19.172C22.333 20.0655 23.1519 20.7241 24.1223 20.7241C25.0927 20.7241 25.9116 20.0655 26.1569 19.172H27.4422C27.7502 19.172 27.9999 18.9223 27.9999 18.6142V14.389C27.9999 14.2539 27.9507 14.1232 27.8617 14.0216ZM12.6108 19.6087C12.0625 19.6087 11.6165 19.1626 11.6165 18.6143C11.6165 18.066 12.0625 17.6199 12.6108 17.6199C13.1591 17.6199 13.6052 18.066 13.6052 18.6143C13.6052 19.1626 13.1591 19.6087 12.6108 19.6087ZM14.6453 18.0565C14.4 17.163 13.5811 16.5044 12.6107 16.5044C11.6403 16.5044 10.8215 17.163 10.5761 18.0565H9.9697V8.39128H20.3738V18.0565H14.6453ZM24.1222 19.6087C23.5739 19.6087 23.1279 19.1626 23.1279 18.6143C23.1279 18.066 23.5739 17.6199 24.1222 17.6199C24.6705 17.6199 25.1166 18.066 25.1166 18.6143C25.1166 19.1626 24.6705 19.6087 24.1222 19.6087ZM26.8843 18.0565H26.1568C25.9115 17.163 25.0926 16.5044 24.1222 16.5044C23.1518 16.5044 22.333 17.163 22.0876 18.0565H21.4894V11.239H23.9411L26.8843 14.5988V18.0565H26.8843Z" fill="#91BABE")
+                                    path(d="M3.7875 16.9318H3.48989C3.18189 16.9318 2.93213 17.1815 2.93213 17.4896C2.93213 17.7976 3.18189 18.0473 3.48989 18.0473H3.7875C4.0955 18.0473 4.34525 17.7976 4.34525 17.4896C4.34525 17.1815 4.09555 16.9318 3.7875 16.9318Z" fill="#91BABE")
+                                    path(d="M6.53516 12.7026H0.557758C0.249758 12.7026 0 12.9523 0 13.2603C0 13.5684 0.249758 13.8181 0.557758 13.8181H6.53516C6.84316 13.8181 7.09291 13.5684 7.09291 13.2603C7.09291 12.9523 6.84316 12.7026 6.53516 12.7026Z" fill="#91BABE")
+                                defs
+                                    clipPath(id="clip0_37_789")
+                                        rect(width="28" height="28" fill="white")
+                            .delivery-details__wrap
+                                .delivery-details__title Доставка от 2-5 дней
+                                .delivery-details__value Бесплатно, при покупке от 500&#8381;
+                    .info-panel__row
+                        button.info-panel__checkout Оформить заказ
