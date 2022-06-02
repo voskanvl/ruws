@@ -1,6 +1,7 @@
 import "../../styles/style.sass";
 import "../../components/range/range";
 import "../bigButtonListener";
+import "../modal";
 
 if (document.readyState === "loading") {
     console.log('document.readyState === "loading"');

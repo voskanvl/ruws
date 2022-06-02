@@ -2,6 +2,7 @@ import "../../styles/style.sass";
 // import "../../components/range/range";
 import "../bigButtonListener";
 import "../switchTabs";
+import "../modal";
 import Splide from "@splidejs/splide";
 
 if (document.readyState === "loading") {

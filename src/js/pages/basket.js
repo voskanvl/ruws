@@ -1,5 +1,6 @@
 import "../../styles/style.sass";
 import "../bigButtonListener";
+import "../modal";
 if (document.readyState === "loading") {
     console.log('document.readyState === "loading"');
     document.addEventListener("DOMContentLoaded", start);
