@@ -95,8 +95,11 @@
     border-radius: 7px
     padding: 31px 44px
     max-width: 731px
+    @media screen and ( max-width: 768px )
+        width: 90vw
+        margin: 0 auto
     &__title
-        font-size: 22px
+        font-size: clamp(16px,3vw,22px)
         max-width: 362px
         margin-bottom: 61px
         margin: 0 auto
@@ -116,3 +119,7 @@
         & > button.checkout-panel__nonelogin
             background: #F0F1F4
             color: #000
+        @media screen and ( max-width: 550px )
+            flex-direction: column
+            & > *
+                margin: 1em 0
