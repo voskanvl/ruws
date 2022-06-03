@@ -10,27 +10,43 @@ block main
                         a(href="#")= i
         section.checkout__checkout
             h1.checkout__title Оформление заказа
-            .checkout__row 
-                .checkout__panel.checkout__contacts.contacts
-                    .contacts__title Контактная информация
-                    .checkout__row 
-                        .checkbox
-                            input(type="checkbox" checked)
-                            label.checkbox__label Физическое лицо
-                        .checkbox
-                            input(type="checkbox")
-                            label.checkbox__label Юридическое лицо
+            .checkout__row.checkout__order 
+                .checkout__left 
+                    .checkout__panel.checkout__contacts.contacts
+                        .contacts__title Контактная информация
+                        .checkout__row.checkout__main
+                            .checkout__main-left
+                                .checkout__row.checkout__status  
+                                    .checkbox
+                                        input(type="checkbox" checked)
+                                        label.checkbox__label Физическое лицо
+                                    .checkbox
+                                        input(type="checkbox")
+                                        label.checkbox__label Юридическое лицо
 
-                    .contacts__input
-                        label.contacts__name ФИО
-                        input.contacts__input-name
-                    .contacts__input
-                        label.contacts__phone Телефон
-                        input.contacts__input-phone 
-                    .contacts__input
-                        label.contacts__email E-mail 
-                        input.contacts__input-email 
-                
+                                .contacts__input
+                                    label.contacts__name ФИО
+                                    input.contacts__input-name
+                                .contacts__input
+                                    label.contacts__phone Телефон
+                                    input.contacts__input-phone 
+                                
+                                .contacts__input
+                                    label.contacts__email E-mail 
+                                    input.contacts__input-email 
+                            .checkout__main-right
+                                .checkbox
+                                    input(type="checkbox" checked)
+                                    label.checkbox__label Сообщите мне о скидках, распрадажах и новых акциях    
+                                .checkbox
+                                    input(type="checkbox" checked)
+                                    label.checkbox__label Даю согласие на обработку персональныхданных    
+                    .paymethod 
+                        .checkout__panel
+                            h1.contacts__title Способ оплаты
+                            .checkbox(style="display:none")
+                                    input(type="checkbox" checked)
+                                    label.checkbox__label Оплата при получении
                 .checkout__panel.checkout__overall.card__info-panel.info-panel 
                     .info-panel__row.info-panel__overall
                         span.info-panel__left 3 товара
@@ -68,3 +84,4 @@ block main
                                 .delivery-details__value Бесплатно, при покупке от 500&#8381;
                     .info-panel__row
                         button.info-panel__checkout Оформить заказ
+        
