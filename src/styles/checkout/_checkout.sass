@@ -49,6 +49,9 @@
             row-gap: 23px
     &__main-left
         flex: 1
+        & .input:not(:last-child)
+            margin-bottom: 32px
+            @media screen and ( max-width: 768px )
     &__main-right > .checkbox:not(:last-child)
         margin-bottom: 1em
 .contacts
@@ -57,19 +60,6 @@
         font-weight: 500
         margin: 0
         margin-bottom: 32px
-    &__input
-        & > label, & > input
-            display: block
-        & > label
-            font-size: 16px
-            margin-bottom: 9px
-        & > input
-            padding: 12px
-            border: 1px solid #E5ECF3
-            border-radius: 3px
-            outline: 1px solid #E5ECF3
-            width: 100%
-        @media screen and ( max-width: 768px )
 
     &__input:not(:last-child)
         margin-bottom: 32px

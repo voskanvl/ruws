@@ -1,4 +1,5 @@
 extends ../layout/project.pug
+include ../../components/input/input.pug
 block main
     main.checkout
         - const crumbs = ["Главная","Корзина","Оформление заказа"]
@@ -24,16 +25,18 @@ block main
                                         input(type="checkbox")
                                         label.checkbox__label Юридическое лицо
 
-                                .contacts__input
-                                    label.contacts__name ФИО
-                                    input.contacts__input-name
-                                .contacts__input
-                                    label.contacts__phone Телефон
-                                    input.contacts__input-phone 
-                                
-                                .contacts__input
-                                    label.contacts__email E-mail 
-                                    input.contacts__input-email 
+                                - const attrs = ['ФИО','Телефон','E-mail']
+                                each i in attrs
+                                    +input(i)
+                                //- .contacts__input.input
+                                //-     label.contacts__name ФИО
+                                //-     input.contacts__input-name
+                                //- .contacts__input
+                                //-     label.contacts__phone Телефон
+                                //-     input.contacts__input-phone 
+                                //- .contacts__input
+                                //-     label.contacts__email E-mail 
+                                //-     input.contacts__input-email 
                             .checkout__main-right
                                 .checkbox
                                     input(type="checkbox" checked)
