@@ -34,6 +34,7 @@ module.exports = {
         product: `${paths.src}/js/pages/product.js`,
         basket: `${paths.src}/js/pages/basket.js`,
         checkout: `${paths.src}/js/pages/checkout.js`,
+        registration: `${paths.src}/js/pages/registration.js`,
         // production: `${paths.src}/js/pages/production.js`,
         // projects: `${paths.src}/js/pages/projects.js`,
     },
